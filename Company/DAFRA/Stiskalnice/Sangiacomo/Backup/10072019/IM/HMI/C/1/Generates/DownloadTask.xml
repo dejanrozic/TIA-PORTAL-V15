@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DownloadTask>
+  <ProjectInfo
+    DeviceVersion="15.0.0.0"
+    CreationTime="2019-06-26 08:54:45 (UTC)"
+    Runtime="COLORADO"
+    RtProjectName="TIA_V15_Final.HMI_1[TP700 Comfort]"
+    RtProjectFolderName="TIA_V15_Final.HMI_1[TP700 Comfort]"
+    DeviceType="TP700 Comfort"
+    DisplayOrientation="0"
+    RTReleaseNo="15.0.0.4"
+    ImageReleaseNo="15.0.0.3"
+    RTCV="15.0.0.3"
+    PRCV="15.0.0.3"
+    FirmwareFileName="CP_7_9\15.0.0.4\CP_7_9_12_V15_0.fwf"
+    RuntimeFileName="CP_7_9\15.0.0.4\CP_7_9_12_V15_0.ruf"
+    RuntimeAddonFolderName="CP_7_9" />
+  <FullDownload>pdata.fwc</FullDownload>
+  <FullDownload
+    type="ADMINDATA">pdata.pwx</FullDownload>
+  <FullDownload>ProjectSettings.hsf</FullDownload>
+  <FullDownload
+    type="RECIPE">pdata.recipe.zip</FullDownload>
+  <FullDownload>DeviceSettings.hsf</FullDownload>
+</DownloadTask>

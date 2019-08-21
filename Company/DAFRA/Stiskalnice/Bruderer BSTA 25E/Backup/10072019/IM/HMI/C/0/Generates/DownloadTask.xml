@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DownloadTask>
+  <ProjectInfo
+    DeviceVersion="15.0.0.0"
+    CreationTime="2019-07-11 06:10:06 (UTC)"
+    Runtime="COLORADO"
+    RtProjectName="10072019.PC station[SIMATIC PC station - WinCC RT Advanced]"
+    RtProjectFolderName="10072019.PC station[SIMATIC PC station - WinCC RT Advanced]"
+    DeviceType="PC-OP"
+    DisplayOrientation="0"
+    RTReleaseNo="15.0.0.0"
+    ImageReleaseNo="15.0.0.0"
+    RTCV="15.0.0.0"
+    PRCV="15.0.0.0"
+    FirmwareFileName=""
+    RuntimeFileName=""
+    RuntimeAddonFolderName="" />
+  <FullDownload>pdata.fwc</FullDownload>
+  <FullDownload
+    type="ADMINDATA">pdata.pwx</FullDownload>
+  <FullDownload>pdata.tfz</FullDownload>
+  <FullDownload>ProjectSettings.hsf</FullDownload>
+  <FullDownload
+    type="RECIPE">pdata.recipe.zip</FullDownload>
+  <License
+    type="WCRT021500">WinCC RT Advanced (512)</License>
+  <License
+    type="WCRCRT9999">WinCC Recipes for RT Advanced</License>
+  <License
+    type="WCLORT9999">WinCC Logging for RT Advanced</License>
+</DownloadTask>

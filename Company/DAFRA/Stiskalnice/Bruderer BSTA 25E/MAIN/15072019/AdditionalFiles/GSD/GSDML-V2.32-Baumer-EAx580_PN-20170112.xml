@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.32.xsd">
+	<ProfileHeader>
+		<ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+		<ProfileRevision>1.00</ProfileRevision>
+		<ProfileName>Device Profile for PROFINET Devices</ProfileName>
+		<ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+		<ProfileClassID>Device</ProfileClassID>
+		<ISO15745Reference>
+			<ISO15745Part>4</ISO15745Part>
+			<ISO15745Edition>1</ISO15745Edition>
+			<ProfileTechnology>GSDML</ProfileTechnology>
+		</ISO15745Reference>
+	</ProfileHeader>
+	<ProfileBody>
+		<DeviceIdentity VendorID="0x012A" DeviceID="0x0200">
+			<InfoText TextId="TOK_DevIdent_InfoText"/>
+			<VendorName Value="Baumer Motion Control"/>
+		</DeviceIdentity>
+		<DeviceFunction>
+			<Family MainFamily="Encoders" ProductFamily="Baumer Motion Control PROFINET Encoder"/>
+		</DeviceFunction>
+
+		<ApplicationProcess>
+			<DeviceAccessPointList>
+				<DeviceAccessPointItem ID="DAP 1" PNIO_Version="V2.32" ModuleIdentNumber="0x00000001" FixedInSlots="0" PhysicalSlots="0..1" AddressAssignment="DCP;LOCAL" CheckDeviceID_Allowed="true" DNS_CompatibleName="EAx580" DeviceAccessSupported="true" ImplementationType="netX" LLDP_NoD_Supported="true" MinDeviceInterval="16" MultipleWriteSupported="true" NameOfStationNotTransferable="true" ObjectUUID_LocalIndex="1" PowerOnToCommReady="500" PrmBeginPrmEndSequenceSupported="false" ResetToFactoryModes="2" SharedDeviceSupported="false" SharedInputSupported="false">
+					<ModuleInfo CategoryRef="ID_EAx580_PN">
+						<Name TextId="DAP_Name"/>
+						<InfoText TextId="TOK_ModInfo_InfoTextId_DAP1"/>
+						<VendorName Value="Baumer Motion Control"/>
+						<HardwareRelease Value="1"/>
+						<SoftwareRelease Value="V1.2.2"/>
+					</ModuleInfo>
+
+					<CertificationInfo ApplicationClass="Isochronous" ConformanceClass="C" NetloadClass="III"/>
+
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000"/>
+						<SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001"/>
+						<SubslotItem SubslotNumber="32770" TextId="TOK_Subslot_8002"/>
+					</SubslotList>
+
+					<IOConfigData MaxInputLength="64" MaxOutputLength="64"/>
+
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MT16ST13" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MT13ST18" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MT16ST14" AllowedInSlots="1"/>
+					</UseableModules>
+
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP 1" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="true">
+							<IOData/>
+							<ModuleInfo CategoryRef="ID_EAx580_PN">
+								<Name TextId="DAP_Name"/>
+								<InfoText TextId="TOK_ModInfo_InfoTextId_DAP1"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="IDS_1I" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" DCP_BoundarySupported="true" DCP_HelloSupported="true" NetworkComponentDiagnosisSupported="true" PTP_BoundarySupported="true" SupportedMibs="MIB2" SupportedProtocols="SNMP;LLDP" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" IsochroneModeInRT_Classes="RT_CLASS_3" IsochroneModeSupported="true" TextId="TOK_DAP_InterfaceModule">
+							<RT_Class3Properties ForwardingMode="Relative" MaxBridgeDelay="5500" MaxNumberIR_FrameData="256" StartupMode="Legacy;Advanced"/>
+							<SynchronisationMode MaxLocalJitter="50" SupportedRole="SyncSlave" SupportedSyncProtocols="PTCP" T_PLL_MAX="1000"/>
+							<ApplicationRelations NumberOfAR="1" StartupMode="Legacy;Advanced">
+								<TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="32 64 128"/>
+								<RT_Class3TimingProperties ReductionRatio="1 2 4 8 16" SendClock="8 16 32 64 128"/>
+							</ApplicationRelations>
+							<MediaRedundancy SupportedRole="Client"/>
+						</InterfaceSubmoduleItem>
+
+						<PortSubmoduleItem ID="IDS_1P1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" CheckMAUTypeSupported="true" IsDefaultRingport="true" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" MaxPortRxDelay="340" MaxPortTxDelay="92" PortDeactivationSupported="true" CheckMAUTypeDifferenceSupported="true" TextId="TOK_Port1">
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						</PortSubmoduleItem>
+
+						<PortSubmoduleItem ID="IDS_1P2" SubslotNumber="32770" SubmoduleIdentNumber="0x0003" CheckMAUTypeSupported="true" IsDefaultRingport="true" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" MaxPortRxDelay="340" MaxPortTxDelay="92" PortDeactivationSupported="true" CheckMAUTypeDifferenceSupported="true" TextId="TOK_Port2">
+							<MAUTypeList>
+								<MAUTypeItem Value="16" AdjustSupported="true"/>
+							</MAUTypeList>
+						</PortSubmoduleItem>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_1"/>
+					</Graphics>
+
+				</DeviceAccessPointItem>
+			</DeviceAccessPointList>
+
+			<ModuleList>
+				<ModuleItem ModuleIdentNumber="0x00000011" ID="ID_MT16ST13" PhysicalSubslots="2">
+					<!--ModuleInfo CategoryRef="ID_EAx580_PN"-->
+					<ModuleInfo>
+						<Name		TextId="MT16ST13"/>
+						<InfoText	TextId="TOK_ModInfo_InfoTextId_DAP1"/>
+						<VendorName	Value="Baumer Motion Control"/>
+						<OrderNumber Value="EAL580-x.x.1316x.x"/>
+					</ModuleInfo>
+
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="0x00000001" SubmoduleIdentNumber="0x0000FFFF" API="15616" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData/>
+
+							<RecordDataList>
+								<ParameterRecordDataItem Index="48896" Length="31">  <!-- Index="0xBF00" -->
+									<Name TextId="FirstDataObject"/>
+									<Const Data="0x2A,0x00,0x00,0x00,0x00,0x00,0x00,0x20,0x00,0x00,0x00,0x00,0x00,0x20,0x00,0x00,0x00,0x01,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00"/>
+
+									<Ref ValueItemTarget="Drehrichtung" DataType="Bit" TextId="DrehName" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Class_4_Enable" DataType="Bit" TextId="Class4Name" ByteOffset="0" BitOffset="1" DefaultValue="1" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Preset_XIST1_disable" DataType="Bit" TextId="PresetXIST1Name" ByteOffset="0" BitOffset="2" DefaultValue="0" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Scaling" DataType="Bit" TextId="ScalingName" ByteOffset="0" BitOffset="3" DefaultValue="1" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Alarm_Channel_Ctrl" DataType="Bit" TextId="AlarmName" ByteOffset="0" BitOffset="4" DefaultValue="0" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Compatibility_Mode" DataType="Bit" TextId="CompatName" ByteOffset="0" BitOffset="5" DefaultValue="1" AllowedValues="0..1"/>
+
+									<Ref DataType="Unsigned32" TextId="AufloesungName" ByteOffset="5" DefaultValue="8192" AllowedValues="1..8192"/>
+									<Ref DataType="Unsigned32" TextId="TMR_Name" ByteOffset="13" DefaultValue="536870912" AllowedValues="1..536870912"/>
+									<Ref DataType="Unsigned8"  TextId="MLS_Failures_Name" ByteOffset="17" DefaultValue="1" AllowedValues="1..255"/>
+									<Ref ValueItemTarget="Speed_Scale" DataType="Unsigned8"  TextId="SpeedCode_Name" ByteOffset="18" DefaultValue="3" AllowedValues="0..3"/>
+								</ParameterRecordDataItem>
+
+								<ParameterRecordDataItem Index="1" Length="2">
+									<Name TextId="speedParam"/>
+									<Const Data="0x00,0x01"/>
+									<Ref DataType="Unsigned8" TextId="SpeedCycles_Name" ByteOffset="0" DefaultValue="16" AllowedValues="1..255"/>
+									<Ref DataType="Unsigned8" TextId="SpeedAverage_Name" ByteOffset="1" DefaultValue="1" AllowedValues="1..255"/>
+								</ParameterRecordDataItem>
+								
+								<ParameterRecordDataItem Index="2" Length="10">
+									<Name TextId="gearParam"/>
+									<Const Data="0x00,0x00,0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x01"/>
+									<Ref ValueItemTarget="GearFactorMenu" DataType="Unsigned16" TextId="gearParam_1_name" ByteOffset="0" DefaultValue="0" AllowedValues="0..1"/>
+									<Ref DataType="Unsigned32" TextId="gearParam_2_name" ByteOffset="2" DefaultValue="8192" AllowedValues="1..8192"/>
+									<Ref DataType="Unsigned32" TextId="gearParam_3_name" ByteOffset="6" DefaultValue="1" AllowedValues="1..65535"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+
+							<ModuleInfo>
+								<Name TextId="TOK_TextId_MAP"/>
+								<InfoText TextId="TOK_InfoTextId_MAP"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+
+					<UseableSubmodules>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_81" AllowedInSubslots="2"/> <!-- UsedInSubslots="2"/-->
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_82" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_83" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_100" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_101" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_86" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_87" AllowedInSubslots="2"/>						
+					</UseableSubmodules>
+				</ModuleItem>
+				<ModuleItem ModuleIdentNumber="0x00000012" ID="ID_MT13ST18" PhysicalSubslots="2">
+					<!--ModuleInfo CategoryRef="ID_EAx580_PN"-->
+					<ModuleInfo>
+						<Name		TextId="MT13ST18"/>
+						<InfoText	TextId="TOK_ModInfo_InfoTextId_DAP1"/>
+						<VendorName	Value="Baumer Motion Control"/>
+						<OrderNumber Value="EAL580-x.x.1813x.x"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="0x00000002" SubmoduleIdentNumber="0x0000FFFF" API="15616" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData/>
+
+							<RecordDataList>
+								<ParameterRecordDataItem Index="48896" Length="31">  <!-- Index="0xBF00" -->
+									<Name TextId="FirstDataObject"/>
+									<Const Data="0x2A,0x00,0x00,0x00,0x00,0x00,0x04,0x00,0x00,0x00,0x00,0x00,0x00,0x80,0x00,0x00,0x00,0x01,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00"/>
+
+									<Ref ValueItemTarget="Drehrichtung" DataType="Bit" TextId="DrehName" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Class_4_Enable" DataType="Bit" TextId="Class4Name" ByteOffset="0" BitOffset="1" DefaultValue="1" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Preset_XIST1_disable" DataType="Bit" TextId="PresetXIST1Name" ByteOffset="0" BitOffset="2" DefaultValue="0" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Scaling" DataType="Bit" TextId="ScalingName" ByteOffset="0" BitOffset="3" DefaultValue="1" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Alarm_Channel_Ctrl" DataType="Bit" TextId="AlarmName" ByteOffset="0" BitOffset="4" DefaultValue="0" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Compatibility_Mode" DataType="Bit" TextId="CompatName" ByteOffset="0" BitOffset="5" DefaultValue="1" AllowedValues="0..1"/>
+
+									<Ref DataType="Unsigned32" TextId="AufloesungName" ByteOffset="5" DefaultValue="262144" AllowedValues="1..262144"/>
+									<Ref DataType="Unsigned32" TextId="TMR_Name" ByteOffset="13" DefaultValue="2147483648" AllowedValues="1..2147483648"/>
+									<Ref DataType="Unsigned8"  TextId="MLS_Failures_Name" ByteOffset="17" DefaultValue="1" AllowedValues="1..255"/>
+									<Ref ValueItemTarget="Speed_Scale" DataType="Unsigned8"  TextId="SpeedCode_Name" ByteOffset="18" DefaultValue="3" AllowedValues="0..3"/>
+								</ParameterRecordDataItem>
+
+								<ParameterRecordDataItem Index="1" Length="2">
+									<Name TextId="speedParam"/>
+									<Const Data="0x00,0x01"/>
+									<Ref DataType="Unsigned8" TextId="SpeedCycles_Name" ByteOffset="0" DefaultValue="16" AllowedValues="1..255"/>
+									<Ref DataType="Unsigned8" TextId="SpeedAverage_Name" ByteOffset="1" DefaultValue="1" AllowedValues="1..255"/>
+								</ParameterRecordDataItem>
+								
+								<ParameterRecordDataItem Index="2" Length="10">
+									<Name TextId="gearParam"/>
+									<Const Data="0x00,0x00,0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x01"/>
+									<Ref ValueItemTarget="GearFactorMenu" DataType="Unsigned16" TextId="gearParam_1_name" ByteOffset="0" DefaultValue="0" AllowedValues="0..1"/>
+									<Ref DataType="Unsigned32" TextId="gearParam_2_name" ByteOffset="2" DefaultValue="4096" AllowedValues="1..4096"/>
+									<Ref DataType="Unsigned32" TextId="gearParam_3_name" ByteOffset="6" DefaultValue="1" AllowedValues="1..65535"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+
+							<ModuleInfo>
+								<Name TextId="TOK_TextId_MAP"/>
+								<InfoText TextId="TOK_InfoTextId_MAP"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+
+					<UseableSubmodules>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_81" AllowedInSubslots="2"/> <!-- UsedInSubslots="2"-->
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_82" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_83" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_100" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_101" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_86" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_87" AllowedInSubslots="2"/>						
+					</UseableSubmodules>
+				</ModuleItem>
+				<ModuleItem ModuleIdentNumber="0x00000013" ID="ID_MT16ST14" PhysicalSubslots="2">
+					<!--ModuleInfo CategoryRef="ID_EAx580_PN"-->
+					<ModuleInfo>
+						<Name		TextId="MT16ST14"/>
+						<InfoText	TextId="TOK_ModInfo_InfoTextId_DAP1"/>
+						<VendorName	Value="Baumer Motion Control"/>
+						<OrderNumber Value="EAM580-x.x.1416x.x"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="0x00000003" SubmoduleIdentNumber="0x0000FFFF" API="15616" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData/>
+
+							<RecordDataList>
+								<ParameterRecordDataItem Index="48896" Length="31">  <!-- Index="0xBF00" -->
+									<Name TextId="FirstDataObject"/>
+									<Const Data="0x2A,0x00,0x00,0x00,0x00,0x00,0x00,0x40,0x00,0x00,0x00,0x00,0x00,0x40,0x00,0x00,0x00,0x01,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00"/>
+
+									<Ref ValueItemTarget="Drehrichtung" DataType="Bit" TextId="DrehName" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Class_4_Enable" DataType="Bit" TextId="Class4Name" ByteOffset="0" BitOffset="1" DefaultValue="1" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Preset_XIST1_disable" DataType="Bit" TextId="PresetXIST1Name" ByteOffset="0" BitOffset="2" DefaultValue="0" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Scaling" DataType="Bit" TextId="ScalingName" ByteOffset="0" BitOffset="3" DefaultValue="1" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Alarm_Channel_Ctrl" DataType="Bit" TextId="AlarmName" ByteOffset="0" BitOffset="4" DefaultValue="0" AllowedValues="0..1"/>
+									<Ref ValueItemTarget="Compatibility_Mode" DataType="Bit" TextId="CompatName" ByteOffset="0" BitOffset="5" DefaultValue="1" AllowedValues="0..1"/>
+
+									<Ref DataType="Unsigned32" TextId="AufloesungName" ByteOffset="5" DefaultValue="16384" AllowedValues="1..16384"/>
+									<Ref DataType="Unsigned32" TextId="TMR_Name" ByteOffset="13" DefaultValue="1073741824" AllowedValues="1..1073741824"/>
+									<Ref DataType="Unsigned8"  TextId="MLS_Failures_Name" ByteOffset="17" DefaultValue="1" AllowedValues="1..255"/>
+									<Ref ValueItemTarget="Speed_Scale" DataType="Unsigned8"  TextId="SpeedCode_Name" ByteOffset="18" DefaultValue="3" AllowedValues="0..3"/>
+								</ParameterRecordDataItem>
+
+								<ParameterRecordDataItem Index="1" Length="2">
+									<Name TextId="speedParam"/>
+									<Const Data="0x00,0x01"/>
+									<Ref DataType="Unsigned8" TextId="SpeedCycles_Name" ByteOffset="0" DefaultValue="16" AllowedValues="1..255"/>
+									<Ref DataType="Unsigned8" TextId="SpeedAverage_Name" ByteOffset="1" DefaultValue="1" AllowedValues="1..255"/>
+								</ParameterRecordDataItem>
+
+								<ParameterRecordDataItem Index="2" Length="10">
+									<Name TextId="gearParam"/>
+									<Const Data="0x00,0x00,0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x01"/>
+									<Ref ValueItemTarget="GearFactorMenu" DataType="Unsigned16" TextId="gearParam_1_name" ByteOffset="0" DefaultValue="0" AllowedValues="0..1"/>
+									<Ref DataType="Unsigned32" TextId="gearParam_2_name" ByteOffset="2" DefaultValue="16384" AllowedValues="1..16384"/>
+									<Ref DataType="Unsigned32" TextId="gearParam_3_name" ByteOffset="6" DefaultValue="1" AllowedValues="1..65535"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="TOK_TextId_MAP"/>
+								<InfoText TextId="TOK_InfoTextId_MAP"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+
+					<UseableSubmodules>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_81" AllowedInSubslots="2"/> <!-- UsedInSubslots="2"-->
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_82" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_83" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_100" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_101" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_86" AllowedInSubslots="2"/>
+						<SubmoduleItemRef SubmoduleItemTarget="ID_Mod_87" AllowedInSubslots="2"/>						
+					</UseableSubmodules>
+				</ModuleItem>
+			</ModuleList>
+
+			<SubmoduleList>
+				<!-- 81, 3D00 -->
+				<SubmoduleItem ID="ID_Mod_81" SubmoduleIdentNumber="0x00000051" API="15616" MayIssueProcessAlarm="true">
+					<IOData>
+						<Input>
+							<DataItem DataType="Unsigned16" UseAsBits="true"  TextId="ENC_ZSW2_ID">
+								<BitDataItem BitOffset="3" TextId="DataItem_Fault_Present_ID"/>
+								<BitDataItem BitOffset="9" TextId="DataItem_ControlByPLC_Reuested_ID"/>
+								<BitDataItem BitOffset="12" TextId="DataItem_Encoder_SignOfLife_ID"/>
+							</DataItem>
+							<DataItem DataType="Unsigned16"  UseAsBits="true" TextId="G1_ZSW_ID">
+								<BitDataItem BitOffset="11" TextId="DataItem_Error_Acknowledgement_Detected_ID"/>
+								<BitDataItem BitOffset="12" TextId="DataItem_Set_OR_Shift_Home_Position_Executed_ID"/>
+								<BitDataItem BitOffset="13" TextId="DataItem_Transmit_Absolute_Value_Cyclically_ID"/>
+								<BitDataItem BitOffset="14" TextId="DataItem_Parking_Sensor_Activate_ID"/>
+								<BitDataItem BitOffset="15" TextId="DataItem_Sensor_Error_Present_ID"/>
+							</DataItem>
+							<DataItem DataType="Unsigned32" TextId="G1_XIST1_ID"/>
+							<DataItem DataType="Unsigned32" TextId="G1_XIST2_ID"/>
+						</Input>
+						<Output>
+							<DataItem DataType="Unsigned16" UseAsBits="true" TextId="ENC_STW2_ID">
+								<BitDataItem BitOffset="7" TextId="DataItem_Fault_Acknowledge_ID"/>
+								<BitDataItem BitOffset="10" TextId="DataItem_ControlByPLC_ID"/>
+								<BitDataItem BitOffset="12" TextId="DataItem_Controller_SignOfLife_ID"/>
+							</DataItem>
+							<DataItem DataType="Unsigned16" UseAsBits="true" TextId="G1_STW_ID">
+								<BitDataItem BitOffset="11" TextId="DataItem_Home_Position_Mode_ID"/>
+								<BitDataItem BitOffset="12" TextId="DataItem_Request_Set_OR_Shift_Home_Position_ID"/>
+								<BitDataItem BitOffset="13" TextId="DataItem_Request_Absolute_Value_Cyclically_ID"/>
+								<BitDataItem BitOffset="14" TextId="DataItem_Activate_Parking_Sensor_ID"/>
+								<BitDataItem BitOffset="15" TextId="DataItem_Acknowledging_Sensor_Error_ID"/>
+							</DataItem>
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_T81"/>
+						<InfoText TextId="TOK_InfoTextId_Module_Telegram81"/>
+					</ModuleInfo>
+					<IsochroneMode T_DC_Base="32" T_DC_Min="1" T_DC_Max="4" T_IO_Base="1000" T_IO_InputMin="500" T_IO_OutputMin="250"/>
+				</SubmoduleItem>
+
+				<!-- 82, 3D00 -->
+				<SubmoduleItem ID="ID_Mod_82" SubmoduleIdentNumber="0x00000052" API="15616" MayIssueProcessAlarm="true">
+					<IOData>
+						<Input>
+							<DataItem DataType="Unsigned16" UseAsBits="true" TextId="ENC_ZSW2_ID">
+								<BitDataItem BitOffset="3" TextId="DataItem_Fault_Present_ID"/>
+								<BitDataItem BitOffset="9" TextId="DataItem_ControlByPLC_Reuested_ID"/>
+								<BitDataItem BitOffset="12" TextId="DataItem_Encoder_SignOfLife_ID"/>
+							</DataItem>
+							<DataItem DataType="Unsigned16" UseAsBits="true" TextId="G1_ZSW_ID">
+								<BitDataItem BitOffset="11" TextId="DataItem_Error_Acknowledgement_Detected_ID"/>
+								<BitDataItem BitOffset="12" TextId="DataItem_Set_OR_Shift_Home_Position_Executed_ID"/>
+								<BitDataItem BitOffset="13" TextId="DataItem_Transmit_Absolute_Value_Cyclically_ID"/>
+								<BitDataItem BitOffset="14" TextId="DataItem_Parking_Sensor_Activate_ID"/>
+								<BitDataItem BitOffset="15" TextId="DataItem_Sensor_Error_Present_ID"/>
+							</DataItem>
+							<DataItem DataType="Unsigned32" TextId="G1_XIST1_ID"/>
+							<DataItem DataType="Unsigned32" TextId="G1_XIST2_ID"/>
+							<DataItem DataType="Integer16" TextId="NIST_A_ID"/>
+						</Input>
+						<Output>
+							<DataItem DataType="Unsigned16" UseAsBits="true" TextId="ENC_STW2_ID">
+								<BitDataItem BitOffset="7" TextId="DataItem_Fault_Acknowledge_ID"/>
+								<BitDataItem BitOffset="10" TextId="DataItem_ControlByPLC_ID"/>
+								<BitDataItem BitOffset="12" TextId="DataItem_Controller_SignOfLife_ID"/>
+							</DataItem>
+							<DataItem DataType="Unsigned16" UseAsBits="true" TextId="G1_STW_ID">
+								<BitDataItem BitOffset="11" TextId="DataItem_Home_Position_Mode_ID"/>
+								<BitDataItem BitOffset="12" TextId="DataItem_Request_Set_OR_Shift_Home_Position_ID"/>
+								<BitDataItem BitOffset="13" TextId="DataItem_Request_Absolute_Value_Cyclically_ID"/>
+								<BitDataItem BitOffset="14" TextId="DataItem_Activate_Parking_Sensor_ID"/>
+								<BitDataItem BitOffset="15" TextId="DataItem_Acknowledging_Sensor_Error_ID"/>
+							</DataItem>
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_T82"/>
+						<InfoText TextId="TOK_InfoTextId_Module_Telegram82"/>
+					</ModuleInfo>
+					<IsochroneMode T_DC_Base="32" T_DC_Min="1" T_DC_Max="4" T_IO_Base="1000" T_IO_InputMin="500" T_IO_OutputMin="250"/>
+				</SubmoduleItem>
+
+				<!-- 83, 3D00 -->
+				<SubmoduleItem ID="ID_Mod_83" SubmoduleIdentNumber="0x00000053" API="15616" MayIssueProcessAlarm="true">
+					<IOData>
+						<Input>
+							<DataItem DataType="Unsigned16" UseAsBits="true" TextId="ENC_ZSW2_ID">
+									<BitDataItem BitOffset="3" TextId="DataItem_Fault_Present_ID"/>
+									<BitDataItem BitOffset="9" TextId="DataItem_ControlByPLC_Reuested_ID"/>
+									<BitDataItem BitOffset="12" TextId="DataItem_Encoder_SignOfLife_ID"/>
+							</DataItem>
+							<DataItem DataType="Unsigned16"  UseAsBits="true" TextId="G1_ZSW_ID">
+									<BitDataItem BitOffset="11" TextId="DataItem_Error_Acknowledgement_Detected_ID"/>
+									<BitDataItem BitOffset="12" TextId="DataItem_Set_OR_Shift_Home_Position_Executed_ID"/>
+									<BitDataItem BitOffset="13" TextId="DataItem_Transmit_Absolute_Value_Cyclically_ID"/>
+									<BitDataItem BitOffset="14" TextId="DataItem_Parking_Sensor_Activate_ID"/>
+									<BitDataItem BitOffset="15" TextId="DataItem_Sensor_Error_Present_ID"/>
+							</DataItem>
+							<DataItem DataType="Unsigned32" TextId="G1_XIST1_ID"/>
+							<DataItem DataType="Unsigned32" TextId="G1_XIST2_ID"/>
+							<DataItem DataType="Integer32" TextId="NIST_B_ID"/>
+						</Input>
+						<Output>
+							<DataItem DataType="Unsigned16" UseAsBits="true" TextId="ENC_STW2_ID">
+								<BitDataItem BitOffset="7" TextId="DataItem_Fault_Acknowledge_ID"/>
+								<BitDataItem BitOffset="10" TextId="DataItem_ControlByPLC_ID"/>
+								<BitDataItem BitOffset="12" TextId="DataItem_Controller_SignOfLife_ID"/>
+							</DataItem>
+							<DataItem DataType="Unsigned16" UseAsBits="true" TextId="G1_STW_ID">
+								<BitDataItem BitOffset="11" TextId="DataItem_Home_Position_Mode_ID"/>
+								<BitDataItem BitOffset="12" TextId="DataItem_Request_Set_OR_Shift_Home_Position_ID"/>
+								<BitDataItem BitOffset="13" TextId="DataItem_Request_Absolute_Value_Cyclically_ID"/>
+								<BitDataItem BitOffset="14" TextId="DataItem_Activate_Parking_Sensor_ID"/>
+								<BitDataItem BitOffset="15" TextId="DataItem_Acknowledging_Sensor_Error_ID"/>
+							</DataItem>
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_T83"/>
+						<InfoText TextId="TOK_InfoTextId_Module_Telegram83"/>
+					</ModuleInfo>
+					<IsochroneMode T_DC_Base="32" T_DC_Min="1" T_DC_Max="4" T_IO_Base="1000" T_IO_InputMin="500" T_IO_OutputMin="250"/>
+				</SubmoduleItem>
+
+				<!-- 86, 3D00 -->
+				<SubmoduleItem ID="ID_Mod_86" SubmoduleIdentNumber="0x00000056" API="15616" MayIssueProcessAlarm="true">
+					<IOData>
+						<Input>
+							<DataItem DataType="Unsigned32" TextId="G1_XIST1_ID"/>
+							<DataItem DataType="Integer32" TextId="NIST_B_ID"/>
+						</Input>
+						<Output>
+							<DataItem DataType="Unsigned32" UseAsBits="true"  TextId="G1_XIST_PRESET_A_ID">
+								<BitDataItem BitOffset="0" TextId="DataItem_Preset_Value_ID"/>
+								<BitDataItem BitOffset="31" TextId="DataItem_Preset_Trigger_ID"/>
+							</DataItem>
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_T860"/>
+						<InfoText TextId="TOK_InfoTextId_Module_Telegram860"/>
+					</ModuleInfo>
+					<IsochroneMode T_DC_Base="32" T_DC_Min="1" T_DC_Max="4" T_IO_Base="1000" T_IO_InputMin="500" T_IO_OutputMin="250"/>
+				</SubmoduleItem>
+
+				<!-- 87, 3D00 -->
+				<SubmoduleItem ID="ID_Mod_87" SubmoduleIdentNumber="0x00000057" API="15616" MayIssueProcessAlarm="true">
+					<IOData>
+						<Input>
+							<DataItem DataType="Unsigned32" TextId="G1_XIST1_ID"/>
+						</Input>
+						<Output>
+							<DataItem DataType="Unsigned32"  UseAsBits="true"  TextId="G1_XIST_PRESET_A_ID">
+								<BitDataItem BitOffset="0" TextId="DataItem_Preset_Value_ID"/>
+								<BitDataItem BitOffset="31" TextId="DataItem_Preset_Trigger_ID"/>
+							</DataItem>
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_T870"/>
+						<InfoText TextId="TOK_InfoTextId_Module_Telegram870"/>
+					</ModuleInfo>
+					<IsochroneMode T_DC_Base="32" T_DC_Min="1" T_DC_Max="4" T_IO_Base="1000" T_IO_InputMin="500" T_IO_OutputMin="250"/>
+				</SubmoduleItem>		
+
+				<!-- 100 (vendor-specific), 3D00 -->
+				<SubmoduleItem ID="ID_Mod_100" SubmoduleIdentNumber="0x00000064" API="15616" MayIssueProcessAlarm="true">
+					<IOData>
+						<Input>
+							<DataItem DataType="Unsigned32" TextId="G1_XIST1_ID"/>
+							<DataItem DataType="Integer16" TextId="NIST_A_ID"/>
+						</Input>
+						<Output>
+							<DataItem DataType="Unsigned32" UseAsBits="true"  TextId="G1_XIST_PRESET_A_ID">
+								<BitDataItem BitOffset="0" TextId="DataItem_Preset_Value_ID"/>
+								<BitDataItem BitOffset="31" TextId="DataItem_Preset_Trigger_ID"/>
+							</DataItem>
+						</Output>
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_T100"/>
+						<InfoText TextId="TOK_InfoTextId_Module_Telegram100"/>
+					</ModuleInfo>
+					<IsochroneMode T_DC_Base="32" T_DC_Min="1" T_DC_Max="4" T_IO_Base="1000" T_IO_InputMin="500" T_IO_OutputMin="250"/>
+				</SubmoduleItem>
+				
+				<!-- 101 (vendor-specific), 3D00 / 500 us cycle time support -->
+				<SubmoduleItem ID="ID_Mod_101" SubmoduleIdentNumber="0x00000065" API="15616" MayIssueProcessAlarm="true">
+					<IOData>
+						<Input>
+							<DataItem DataType="Unsigned32" TextId="G1_XIST1_ID"/>							
+						</Input>
+						<!-- no outputs !! -->						
+					</IOData>
+					<ModuleInfo>
+						<Name TextId="TOK_TextId_Module_T101"/>
+						<InfoText TextId="TOK_InfoTextId_Module_Telegram101"/>
+					</ModuleInfo>
+					<IsochroneMode T_DC_Base="8" T_DC_Min="2" T_DC_Max="16" T_IO_Base="1000" T_IO_InputMin="450" T_IO_OutputMin="10"/>
+				</SubmoduleItem>
+			</SubmoduleList>
+
+			<ValueList>
+				<ValueItem ID="Drehrichtung">
+					<Assignments>
+						<Assign Content="0" TextId="Uhr"/>
+						<Assign Content="1" TextId="gegenUhr"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="Class_4_Enable">
+					<Assignments>
+						<Assign Content="0" TextId="Class3"/>
+						<Assign Content="1" TextId="Class4"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="Preset_XIST1_disable">
+					<Assignments>
+						<Assign Content="0" TextId="G1_XIST1_affected"/>
+						<Assign Content="1" TextId="G1_XIST1_not_affected"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="Scaling">
+					<Assignments>
+						<Assign Content="0" TextId="Scaling_disabled"/>
+						<Assign Content="1" TextId="Scaling_enabled"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="Alarm_Channel_Ctrl">
+					<Assignments>
+						<Assign Content="0" TextId="Communication_Alarms_only"/>
+						<Assign Content="1" TextId="Profile_Specific_Alarms"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="Compatibility_Mode">
+					<Assignments>
+						<Assign Content="0" TextId="Compatibility_Profile_31"/>
+						<Assign Content="1" TextId="No_Compatibility"/>
+					</Assignments>
+				</ValueItem>
+				<ValueItem ID="Speed_Scale">
+				<Assignments>
+						<Assign Content="0" TextId="Speed_1000_Name"/>
+						<Assign Content="1" TextId="Speed_100_Name"/>
+						<Assign Content="2" TextId="Speed_10_Name"/>
+						<Assign Content="3" TextId="Speed_rpm_Name"/>
+					</Assignments>
+				</ValueItem>				
+				<ValueItem ID="GearFactorMenu">
+					<Assignments>						
+						<Assign Content="0" TextId="GearFactor_disabled"/>
+						<Assign Content="1" TextId="GearFactor_enabled"/>
+					</Assignments>
+				</ValueItem>
+			</ValueList>
+
+			<ChannelDiagList>
+				<ProfileChannelDiagItem API="15616" ErrorType="36864">	<!--API 0x3D00-->
+					<Name TextId="TOK_Name_ErrorType_0x9000"/>
+					<Help TextId="TOK_Help_ErrorType_0x9000"/>
+				</ProfileChannelDiagItem>
+				<ProfileChannelDiagItem API="15616" ErrorType="36874">
+					<Name TextId="TOK_Name_ErrorType_0x900A"/>
+					<Help TextId="TOK_Help_ErrorType_0x900A"/>
+				</ProfileChannelDiagItem>
+				<ChannelDiagItem ErrorType="258">
+					<Name TextId="TOK_Name_ErrorType_0x0102"/>
+					<Help TextId="TOK_Help_ErrorType_0x0102"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="259">
+					<Name TextId="TOK_Name_ErrorType_0x0103"/>
+					<Help TextId="TOK_Help_ErrorType_0x0103"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="260">
+					<Name TextId="TOK_Name_ErrorType_0x0104"/>
+					<Help TextId="TOK_Help_ErrorType_0x0104"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="261">
+					<Name TextId="TOK_Name_ErrorType_0x0105"/>
+					<Help TextId="TOK_Help_ErrorType_0x0105"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="262">
+					<Name TextId="TOK_Name_ErrorType_0x0106"/>
+					<Help TextId="TOK_Help_ErrorType_0x0106"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="263">
+					<Name TextId="TOK_Name_ErrorType_0x0107"/>
+					<Help TextId="TOK_Help_ErrorType_0x0107"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="512">
+					<Name TextId="TOK_Name_ErrorType_0x0200"/>
+					<Help TextId="TOK_Help_ErrorType_0x0200"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="513">
+					<Name TextId="TOK_Name_ErrorType_0x0201"/>
+					<Help TextId="TOK_Help_ErrorType_0x0201"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="544">
+					<Name TextId="TOK_Name_ErrorType_0x0220"/>
+					<Help TextId="TOK_Help_ErrorType_0x0220"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="545">
+					<Name TextId="TOK_Name_ErrorType_0x0221"/>
+					<Help TextId="TOK_Help_ErrorType_0x0221"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="546">
+					<Name TextId="TOK_Name_ErrorType_0x0222"/>
+					<Help TextId="TOK_Help_ErrorType_0x0222"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="547">
+					<Name TextId="TOK_Name_ErrorType_0x0223"/>
+					<Help TextId="TOK_Help_ErrorType_0x0223"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="548">
+					<Name TextId="TOK_Name_ErrorType_0x0224"/>
+					<Help TextId="TOK_Help_ErrorType_0x0224"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="549">
+					<Name TextId="TOK_Name_ErrorType_0x0225"/>
+					<Help TextId="TOK_Help_ErrorType_0x0225"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="576">
+					<Name TextId="TOK_Name_ErrorType_0x0240"/>
+					<Help TextId="TOK_Help_ErrorType_0x0240"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="577">
+					<Name TextId="TOK_Name_ErrorType_0x0241"/>
+					<Help TextId="TOK_Help_ErrorType_0x0241"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="578">
+					<Name TextId="TOK_Name_ErrorType_0x0242"/>
+					<Help TextId="TOK_Help_ErrorType_0x0242"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="608">
+					<Name TextId="TOK_Name_ErrorType_0x0260"/>
+					<Help TextId="TOK_Help_ErrorType_0x0260"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="609">
+					<Name TextId="TOK_Name_ErrorType_0x0261"/>
+					<Help TextId="TOK_Help_ErrorType_0x0261"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="610">
+					<Name TextId="TOK_Name_ErrorType_0x0262"/>
+					<Help TextId="TOK_Help_ErrorType_0x0262"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="611">
+					<Name TextId="TOK_Name_ErrorType_0x0263"/>
+					<Help TextId="TOK_Help_ErrorType_0x0263"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="768">
+					<Name TextId="TOK_Name_ErrorType_0x0300"/>
+					<Help TextId="TOK_Help_ErrorType_0x0300"/>
+				</ChannelDiagItem>
+				<ChannelDiagItem ErrorType="800">
+					<Name TextId="TOK_Name_ErrorType_0x0320"/>
+					<Help TextId="TOK_Help_ErrorType_0x0320"/>
+				</ChannelDiagItem>
+			</ChannelDiagList>
+
+			<!--Bitmap File: GSDML_012A_0100_EAL580.bmp B70xH40x24bit colors -->
+			<GraphicsList>
+				<GraphicItem ID="ID_Graph_1" GraphicFile="GSDML_012A_0100_EAL580"/>
+			</GraphicsList>
+
+			<CategoryList>
+				<CategoryItem ID="ID_EAx580_PN" TextId="TOK_Category_EAx580_PN"/>
+			</CategoryList>
+
+			<ExternalTextList>
+				<PrimaryLanguage>
+					<!--english-->
+					<Text TextId="TOK_DevIdent_InfoText" Value="EAx PROFINET Encoder"/>
+
+					<!--DAP - Device Access Point -->
+					<Text TextId="TOK_Category_EAx580_PN" Value="EAx PROFINET Encoder"/>
+					<Text TextId="DAP_Name" Value="EAx580 Encoder"/>
+					<Text TextId="MT16ST13" Value="EAL580 MT Encoder ST13 MT16, optical"/>
+					<Text TextId="MT13ST18" Value="EAL580 MT Encoder ST18 MT13, optical"/>
+					<Text TextId="MT16ST14" Value="EAM580 MT Encoder ST14 MT16, magnetic"/>
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP1" Value="Absolute PROFINET-IO Encoder, Realtime (RT) Class1, Isochronous Realtime (IRT)  Class3, acyclic communication"/>					
+
+					<!--port name-->
+					<Text TextId="TOK_Subslot_8000" Value="X1"/>
+					<Text TextId="TOK_Subslot_8001" Value="P1"/>
+					<Text TextId="TOK_Subslot_8002" Value="P2"/>
+					<Text TextId="TOK_DAP_InterfaceModule" Value="Interface"/>
+					<Text TextId="TOK_Port1" Value="RJ45 10/100 MBit/s"/>
+					<Text TextId="TOK_Port2" Value="RJ45 10/100 MBit/s"/>
+
+					<Text TextId="TOK_TextId_MAP" Value="Module Access Point"/>
+					<Text TextId="TOK_InfoTextId_MAP" Value="Module Access Point."/>
+
+					<!--module name-->
+					<Text TextId="TOK_TextId_Module_T81"	Value="Telegram 81"/>
+					<Text TextId="TOK_TextId_Module_T82"	Value="Telegram 82"/>
+					<Text TextId="TOK_TextId_Module_T83"	Value="Telegram 83"/>
+					<Text TextId="TOK_TextId_Module_T860"	Value="Telegram 860"/>
+					<Text TextId="TOK_TextId_Module_T870"	Value="Telegram 870"/>
+					<Text TextId="TOK_TextId_Module_T100"	Value="Telegram 100"/>
+					<Text TextId="TOK_TextId_Module_T101"	Value="Telegram 101"/>
+
+					<!--module info name-->
+					<Text TextId="TOK_InfoTextId_Module_Telegram81"		Value="Telegram 81 (Overall Consistency) - PROFIdrive Telegram 81 with 32bit Position Values G1_XIST1 / G1_XIST2"/>
+					<Text TextId="TOK_InfoTextId_Module_Telegram82"		Value="Telegram 82 (Overall Consistency) - PROFIdrive Telegram 82 with 32bit Position Values G1_XIST1 / G1_XIST2 and 16bit Velocity Value NIST_A"/>
+					<Text TextId="TOK_InfoTextId_Module_Telegram83"		Value="Telegram 83 (Overall Consistency) - PROFIdrive Telegram 83 with 32bit Position Values G1_XIST1 / G1_XIST2 and 32bit Velocity Value NIST_B"/>
+					<Text TextId="TOK_InfoTextId_Module_Telegram860"	Value="Telegram 860 (Overall Consistency) - Manufacturer Specific Telegram 860 with 32bit Position Value and 32bit Velocity Value"/>
+					<Text TextId="TOK_InfoTextId_Module_Telegram870"	Value="Telegram 870 (Overall Consistency) - Manufacturer Specific Telegram 870 with 32bit Position Value"/>
+					<Text TextId="TOK_InfoTextId_Module_Telegram100"	Value="Telegram 100 (Overall Consistency) - Manufacturer Specific Telegram 100 with 32bit Position Value and 16bit Velocity Value"/>
+					<Text TextId="TOK_InfoTextId_Module_Telegram101"	Value="Telegram 101 (Overall Consistency) - Manufacturer Specific Telegram 101 with 32bit Data"/>
+
+					<!--errortype name-->
+					<Text TextId="TOK_Name_ErrorType_0x9000" Value="master's sign of life fault"/>
+					<Text TextId="TOK_Name_ErrorType_0x900A" Value="IR-LED light control reserve reached"/>
+					<Text TextId="TOK_Name_ErrorType_0x0102" Value="SSI frame error"/>
+					<Text TextId="TOK_Name_ErrorType_0x0103" Value="SSI CRC error"/>
+					<Text TextId="TOK_Name_ErrorType_0x0104" Value="SSI frame extended error"/>
+					<Text TextId="TOK_Name_ErrorType_0x0105" Value="SSI CRC extended error"/>
+					<Text TextId="TOK_Name_ErrorType_0x0106" Value="generic error in position acquisition unit"/>
+					<Text TextId="TOK_Name_ErrorType_0x0107" Value="generic warning in position acquisition unit"/>
+					<Text TextId="TOK_Name_ErrorType_0x0200" Value="position error"/>
+					<Text TextId="TOK_Name_ErrorType_0x0201" Value="preset out of range"/>
+					<Text TextId="TOK_Name_ErrorType_0x0220" Value="measuring units per revolution is zero"/>
+					<Text TextId="TOK_Name_ErrorType_0x0221" Value="total measuring range is zero"/>
+					<Text TextId="TOK_Name_ErrorType_0x0222" Value="measuring units per revolution overflow"/>
+					<Text TextId="TOK_Name_ErrorType_0x0223" Value="total measuring range overflow"/>
+					<Text TextId="TOK_Name_ErrorType_0x0224" Value="total measuring range illegal"/>
+					<Text TextId="TOK_Name_ErrorType_0x0225" Value="code sequence illegal"/>
+					<Text TextId="TOK_Name_ErrorType_0x0240" Value="velocity measuring unit is out of range"/>
+					<Text TextId="TOK_Name_ErrorType_0x0241" Value="velocity update period is zero or lower than the bus cycle time"/>
+					<Text TextId="TOK_Name_ErrorType_0x0242" Value="velocity filter depth is zero"/>					
+					<Text TextId="TOK_Name_ErrorType_0x0260" Value="gear factor: activation value is out of range"/>
+					<Text TextId="TOK_Name_ErrorType_0x0261" Value="gear factor: nominator (of number of turns) is out of range"/>
+					<Text TextId="TOK_Name_ErrorType_0x0262" Value="gear factor: divisor (of number of turns) is out of range"/>
+					<Text TextId="TOK_Name_ErrorType_0x0263" Value="gear factor: combination of parameters numerator, denominator and total measuring range exceeds 32 bit value range of the position value, gear factor functionality will be deactivated"/>
+					<Text TextId="TOK_Name_ErrorType_0x0300" Value="electronic device label could not be read"/>
+					<Text TextId="TOK_Name_ErrorType_0x0320" Value="battery voltage low"/>
+
+					<Text TextId="TOK_Help_ErrorType_0x9000" Value="A master sign of life evaluation error was detected."/>
+					<Text TextId="TOK_Help_ErrorType_0x900A" Value="Replace the encoder soon to avoid position errors."/>
+					<Text TextId="TOK_Help_ErrorType_0x0102" Value="SSI frame error occurred."/>
+					<Text TextId="TOK_Help_ErrorType_0x0103" Value="SSI CRC error occurred. Ensure that the entire system is installed in line with EMC/EMI requirements."/>
+					<Text TextId="TOK_Help_ErrorType_0x0104" Value="SSI frame extended error occurred."/>
+					<Text TextId="TOK_Help_ErrorType_0x0105" Value="SSI CRC extended error occurred. Ensure that the entire system is installed in line with EMC/EMI requirements."/>
+					<Text TextId="TOK_Help_ErrorType_0x0106" Value="Correct operation of the encoder is not guaranteed anymore. For further information please contact manufacturer."/>
+					<Text TextId="TOK_Help_ErrorType_0x0107" Value="Position might be incorrect or out of specification (e.g. temperature, speed out of range or other internal failure)."/>
+					<Text TextId="TOK_Help_ErrorType_0x0200" Value="The encoder encountered a big position difference between two consecutive measurements and possibly cannot provide correct position data. Replace the encoder if the error persists."/>
+					<Text TextId="TOK_Help_ErrorType_0x0201" Value="The requested preset value is out of the encoder's parameterized total measuring range. Thus the preset cannot be executed."/>
+					<Text TextId="TOK_Help_ErrorType_0x0220" Value="The parameter value for steps per revolution is zero. This is not allowed."/>
+					<Text TextId="TOK_Help_ErrorType_0x0221" Value="The parameter value for the total measuring range is zero. This is not allowed."/>
+					<Text TextId="TOK_Help_ErrorType_0x0222" Value="The parameter value for measuring units per revolution is out of range for this encoder. Please consider the maximum value given in the encoder`s data sheet."/>
+					<Text TextId="TOK_Help_ErrorType_0x0223" Value="The parameter value for the total measuring range is out of range for this encoder. Please consider the maximum value given in the encoder`s data sheet."/>
+					<Text TextId="TOK_Help_ErrorType_0x0224" Value="The parameter value for total measuring range exceeds the valid range. It must not exceed the product of parameterized measuring units per revolution and max. number of revolutions (value 8192 for 13 bit or 65536 for 16 bit, depending on the type of the encoder)."/>
+					<Text TextId="TOK_Help_ErrorType_0x0225" Value="The parameter value for the code sequence has another value than 0 or 1. This is not allowed."/>
+					<Text TextId="TOK_Help_ErrorType_0x0240" Value="The parameter value for the velocity measuring unit exceeds the valid range of 0..3. This is not allowed."/>
+					<Text TextId="TOK_Help_ErrorType_0x0241" Value="The parameter value for the velocity update period is zero or lower than the bus cycle time. This is not allowed."/>
+					<Text TextId="TOK_Help_ErrorType_0x0242" Value="The parameter value for the velocity filter depth is 0. This is not allowed."/>					
+					<Text TextId="TOK_Help_ErrorType_0x0260" Value="The parameter value for the activation value of the gear factor exceeds the valid range. This is not allowed."/>
+					<Text TextId="TOK_Help_ErrorType_0x0261" Value="The parameter value for the nominator (of number of turns) of the gear factor exceeds the valid range. This is not allowed."/>
+					<Text TextId="TOK_Help_ErrorType_0x0262" Value="The parameter value for the divisor (of number of turns) of the gear factor exceeds the valid range. This is not allowed."/>					
+					<Text TextId="TOK_Help_ErrorType_0x0263" Value="The combination of parameter values for numerator and denominator of the gear factor and total measuring range (for gear factor mode) exceeds the 32 bit value range of the position value. Parameters have to be adjusted."/>				
+					<Text TextId="TOK_Help_ErrorType_0x0300" Value="An error occurred while reading the electronic device label from internal non-volatile memory. The encoder operates with default settings."/>
+					<Text TextId="TOK_Help_ErrorType_0x0320" Value="The voltage of the encoder`s backup battery has reached the warning level. Replace the encoder in the near future to avoid multiturn position errors."/>
+
+					<!-- Parameter -->
+					<Text TextId="speedParam" Value="Velocity Parameters"/>
+					<Text TextId="gearParam" Value="Gear Parameters"/>
+					<Text TextId="gearParam_1_name" Value="Gear Factor: activation"/>
+					<Text TextId="gearParam_2_name" Value="Gear Factor: nominator"/>
+					<Text TextId="gearParam_3_name" Value="Gear Factor: divisor"/>
+					<Text TextId="FirstDataObject" Value="Encoder Parameters"/>
+					<Text TextId="DrehName" Value="Code Sequence"/>
+					<Text TextId="Uhr" Value="Clockwise (CW)"/>
+					<Text TextId="gegenUhr" Value="Counterclockwise (CCW)"/>
+					<Text TextId="AufloesungName" Value="Measuring Units per Revolution"/>
+					<Text TextId="TMR_Name" Value="Total Measuring Range"/>
+					<Text TextId="Class4Name" Value="Encoder Class Selection"/>
+					<Text TextId="Class3" Value="Class 3 (no Scaling or Preset, always CW)"/>
+					<Text TextId="Class4" Value="Class 4"/>
+					<Text TextId="PresetXIST1Name" Value="G1_XIST1 affected by Preset"/>
+					<Text TextId="G1_XIST1_affected" Value="Yes"/>
+					<Text TextId="G1_XIST1_not_affected" Value="No"/>
+					<Text TextId="ScalingName" Value="Scaling"/>
+					<Text TextId="Scaling_disabled" Value="Disabled"/>
+					<Text TextId="Scaling_enabled" Value="Enabled"/>
+					<Text TextId="AlarmName" Value="Alarm Channel Control (V3.1 only)"/>
+					<Text TextId="Communication_Alarms_only" Value="Communication Alarms only"/>
+					<Text TextId="Profile_Specific_Alarms" Value="Include Profile Specific Alarms"/>
+					<Text TextId="MLS_Failures_Name" Value="Maximum Master Sign-of-Life Failures (V3.1 only)"/>
+					<Text TextId="CompatName" Value="Compatibility Mode"/>
+					<Text TextId="Compatibility_Profile_31" Value="Profile V3.1"/>
+					<Text TextId="No_Compatibility" Value="Profile V4.1"/>
+					<Text TextId="SpeedCode_Name" Value="Velocity Measuring Unit"/>
+					<Text TextId="SpeedCycles_Name" Value="Velocity Update Period [ms]"/>
+					<Text TextId="SpeedAverage_Name" Value="Velocity Filter Depth (Update Periods)"/>
+					<Text TextId="Speed_1000_Name" Value="Steps/1000 ms"/>
+					<Text TextId="Speed_100_Name" Value="Steps/100 ms"/>
+					<Text TextId="Speed_10_Name" Value="Steps/10 ms"/>
+					<Text TextId="Speed_rpm_Name" Value="Revolutions per Minute (rpm)"/>
+					<Text TextId="GearFactor_disabled" Value="Disabled"/>
+					<Text TextId="GearFactor_enabled" Value="Enabled"/>
+
+
+					<Text TextId="ENC_STW2_ID" Value="Encoder control word 2 (STW2_ENC)"/>
+					<Text TextId="ENC_ZSW2_ID" Value="Encoder status word 2 (ZSW2_ENC)"/>
+					<Text TextId="G1_ZSW_ID" Value="Sensor 1 status word (G1_ZSW)"/>
+					<Text TextId="G1_STW_ID" Value="Sensor 1 control word (G1_STW)"/>
+					<Text TextId="G1_XIST1_ID" Value="Sensor 1 position actual value 1 (G1_XIST1)"/>
+					<Text TextId="G1_XIST2_ID" Value="Sensor 1 position actual value 2 (G1_XIST2)"/>
+					<Text TextId="NIST_A_ID" Value="Velocity actual value A"/>
+					<Text TextId="NIST_B_ID" Value="Velocity actual value B"/>
+					<Text TextId="G1_XIST_PRESET_A_ID" Value="Sensor preset control word 32bit  (G1_XIST_PRESET_A)"/>
+
+					<Text TextId="DataItem_Fault_Acknowledge_ID" Value="Fault Acknowledge"/>
+					<Text TextId="DataItem_ControlByPLC_ID" Value="Control by PLC"/>
+					<Text TextId="DataItem_Controller_SignOfLife_ID" Value="Controller Sign-Of-Life"/>
+
+					<Text TextId="DataItem_Fault_Present_ID" Value="Fault Present"/>
+					<Text TextId="DataItem_ControlByPLC_Reuested_ID" Value="Control requested"/>
+					<Text TextId="DataItem_Encoder_SignOfLife_ID" Value="Encoder Sign-Of-Life"/>
+
+					<Text TextId="DataItem_Home_Position_Mode_ID" Value="Home position mode"/>
+					<Text TextId="DataItem_Request_Set_OR_Shift_Home_Position_ID" Value="Request set/shift of home position"/>
+					<Text TextId="DataItem_Request_Absolute_Value_Cyclically_ID" Value="Request absolute value cyclically"/>
+					<Text TextId="DataItem_Activate_Parking_Sensor_ID" Value="Activate parking sensor"/>
+					<Text TextId="DataItem_Acknowledging_Sensor_Error_ID" Value="Acknowledging a sensor error"/>
+
+					<Text TextId="DataItem_Error_Acknowledgement_Detected_ID" Value="Requirement of error acknowledgement detected"/>
+					<Text TextId="DataItem_Set_OR_Shift_Home_Position_Executed_ID" Value="Set /Shift of home position executed"/>
+					<Text TextId="DataItem_Transmit_Absolute_Value_Cyclically_ID" Value="Transmit absolute value cyclically"/>
+					<Text TextId="DataItem_Parking_Sensor_Activate_ID" Value="Parking sensor active"/>
+					<Text TextId="DataItem_Sensor_Error_Present_ID" Value="Sensor error"/>
+
+					<Text TextId="DataItem_Preset_Value_ID" Value="Sensor preset value"/>
+					<Text TextId="DataItem_Preset_Trigger_ID" Value="Trigger bit to control the transfer of the preset value (0 -&gt; 1 edge)"/>
+				</PrimaryLanguage>
+
+				<Language xml:lang="de">
+					<!--german-->
+					<Text TextId="TOK_DevIdent_InfoText" Value="EAx PROFINET Drehgeber"/>
+
+					<!--DAP - Device Access Point -->
+					<Text TextId="TOK_Category_EAx580_PN" Value="EAx PROFINET Drehgeber"/>
+					<Text TextId="DAP_Name" Value="EAx580 Drehgeber"/>
+					<Text TextId="MT16ST13" Value="EAL580 MT Geber ST13 MT16, optisch"/>
+					<Text TextId="MT13ST18" Value="EAL580 MT Geber ST18 MT13, optisch"/>
+					<Text TextId="MT16ST14" Value="EAM580 MT Geber ST14 MT16, magnetisch"/>
+					<Text TextId="TOK_ModInfo_InfoTextId_DAP1" Value="Absoluter PROFINET-IO Drehgeber, Realtime (RT) Class1, Isochrone Realtime (IRT) Class3, azyklische Kommunikation"/>					
+
+					<!--port name-->
+					<Text TextId="TOK_Subslot_8000" Value="X1"/>
+					<Text TextId="TOK_Subslot_8001" Value="P1"/>
+					<Text TextId="TOK_Subslot_8002" Value="P2"/>
+					<Text TextId="TOK_DAP_InterfaceModule" Value="Interface"/>
+					<Text TextId="TOK_Port1" Value="RJ45 10/100 MBit/s"/>
+					<Text TextId="TOK_Port2" Value="RJ45 10/100 MBit/s"/>
+
+
+					<Text TextId="TOK_TextId_MAP" Value="Module Access Point"/>
+					<Text TextId="TOK_InfoTextId_MAP" Value="Module Access Point."/>
+
+					<!--submodule name-->
+					<Text TextId="TOK_TextId_Module_T81"	Value="Telegramm 81"/>
+					<Text TextId="TOK_TextId_Module_T82"	Value="Telegramm 82"/>
+					<Text TextId="TOK_TextId_Module_T83"	Value="Telegramm 83"/>
+					<Text TextId="TOK_TextId_Module_T860"	Value="Telegramm 860"/>
+					<Text TextId="TOK_TextId_Module_T870"	Value="Telegramm 870"/>
+					<Text TextId="TOK_TextId_Module_T100"	Value="Telegramm 100"/>
+					<Text TextId="TOK_TextId_Module_T101"	Value="Telegramm 101"/>
+
+					<!--module info name-->
+					<Text TextId="TOK_InfoTextId_Module_Telegram81" Value="Telegramm 81 (Gesamtkonsistenz) - PROFIdrive Telegramm 81 mit 32bit Positionswerten G1_XIST1 / G1_XIST2"/>
+					<Text TextId="TOK_InfoTextId_Module_Telegram82" Value="Telegramm 82 (Gesamtkonsistenz) - PROFIdrive Telegramm 82 mit 32bit Positionswerten G1_XIST1 / G1_XIST2 und 16bit Drehzahl NIST_A"/>
+					<Text TextId="TOK_InfoTextId_Module_Telegram83" Value="Telegramm 83 (Gesamtkonsistenz) - PROFIdrive Telegramm 83 mit 32bit Positionswerten G1_XIST1 / G1_XIST2 und 32bit Drehzahl NIST_B"/>
+					<Text TextId="TOK_InfoTextId_Module_Telegram860" Value="Telegramm 860 (Gesamtkonsistenz) - Herstellerspezifisches Telegramm 860 mit 32bit Positionswert und 32bit Drehzahl"/>
+					<Text TextId="TOK_InfoTextId_Module_Telegram870" Value="Telegramm 870 (Gesamtkonsistenz) - Herstellerspezifisches Telegramm 870 mit 32bit Positionswert"/>
+					<Text TextId="TOK_InfoTextId_Module_Telegram100" Value="Telegramm 100 (Gesamtkonsistenz) - Herstellerspezifisches Telegramm 100 mit 32bit Positionswert und 16bit Drehzahl"/>
+				    <Text TextId="TOK_InfoTextId_Module_Telegram101" Value="Telegramm 101 (Gesamtkonsistenz) - Herstellerspezifisches Telegramm 101 mit 32bit Daten"/>
+
+					<!--errortype name-->
+					<Text TextId="TOK_Name_ErrorType_0x9000" Value="Fehler des Master-Lebenszeichenzählers"/>
+					<Text TextId="TOK_Name_ErrorType_0x900A" Value="IR-LED-Lichtregelbereich ausgeschöpft"/>
+					<Text TextId="TOK_Name_ErrorType_0x0102" Value="SSI-FRM-Fehler"/>
+					<Text TextId="TOK_Name_ErrorType_0x0103" Value="SSI-CRC-Fehler"/>
+					<Text TextId="TOK_Name_ErrorType_0x0104" Value="SSI-FRM-extended-Fehler"/>
+					<Text TextId="TOK_Name_ErrorType_0x0105" Value="SSI-CRC-extended-Fehler"/>
+					<Text TextId="TOK_Name_ErrorType_0x0106" Value="Generischer Fehler in Positionserfassung"/>
+					<Text TextId="TOK_Name_ErrorType_0x0107" Value="Generische Warnung in Positionserfassung"/>
+					<Text TextId="TOK_Name_ErrorType_0x0200" Value="Positionsfehler"/>
+					<Text TextId="TOK_Name_ErrorType_0x0201" Value="Preset-Wert außerhalb des gültigen Wertebereichs"/>
+					<Text TextId="TOK_Name_ErrorType_0x0220" Value="Schritte pro Umdrehung ist Null."/>
+					<Text TextId="TOK_Name_ErrorType_0x0221" Value="Gesamtmessbereich ist Null."/>
+					<Text TextId="TOK_Name_ErrorType_0x0222" Value="Schritte pro Umdrehung zu hoch"/>
+					<Text TextId="TOK_Name_ErrorType_0x0223" Value="Gesamtmessbereich zu hoch"/>
+					<Text TextId="TOK_Name_ErrorType_0x0224" Value="Gesamtmessbereich ungültig"/>
+					<Text TextId="TOK_Name_ErrorType_0x0225" Value="Drehrichtung ungültig"/>
+					<Text TextId="TOK_Name_ErrorType_0x0240" Value="Drehzahl-Skalierung ist außerhalb des gültigen Bereichs."/>
+					<Text TextId="TOK_Name_ErrorType_0x0241" Value="Drehzahl-Aktualisierungszeit ist Null oder kleiner als die Buszykluszeit."/>
+					<Text TextId="TOK_Name_ErrorType_0x0242" Value="Drehzahl-Filtertiefe ist Null."/>
+					<Text TextId="TOK_Name_ErrorType_0x0260" Value="Getriebefaktor: Wert für Aktivierung ist außerhalb des gültigen Bereichs."/>
+					<Text TextId="TOK_Name_ErrorType_0x0261" Value="Getriebefaktor: Zähler (der Anzahl der Umdrehungen) ist außerhalb des gültigen Bereichs."/>
+					<Text TextId="TOK_Name_ErrorType_0x0262" Value="Getriebefaktor: Nenner (der Anzahl der Umdrehungen) ist außerhalb des gültigen Bereichs."/>					
+					<Text TextId="TOK_Name_ErrorType_0x0263" Value="Getriebefaktor: Kombination der Parameter Zähler, Nenner und Gesamtmessbereich überschreitet den 32-Bit-Wertebereich des Positionswerts. Getriebefaktor-Funktion wird abgeschaltet."/>					
+					<Text TextId="TOK_Name_ErrorType_0x0300" Value="Das elektronische Typenschild konnte nicht gelesen werden."/>
+					<Text TextId="TOK_Name_ErrorType_0x0320" Value="Batterie-Spannung niedrig"/>
+
+					<Text TextId="TOK_Help_ErrorType_0x9000" Value="Ein Fehler bei der Auswertung des Master-Lebenszeichenzählers wurde erkannt."/>
+					<Text TextId="TOK_Help_ErrorType_0x900A" Value="Ersetzen Sie bald den Drehgeber, um Positionsfehler zu vermeiden."/>
+					<Text TextId="TOK_Help_ErrorType_0x0102" Value="SSI-FRM-Fehler ist aufgetreten."/>
+					<Text TextId="TOK_Help_ErrorType_0x0103" Value="SSI-CRC-Fehler ist aufgetreten. Stellen Sie sicher, dass das System gemäß EMV-Richtlinien installiert ist."/>
+					<Text TextId="TOK_Help_ErrorType_0x0104" Value="SSI-FRM-extended-Fehler ist aufgetreten."/>
+					<Text TextId="TOK_Help_ErrorType_0x0105" Value="SSI-CRC-extended-Fehler ist aufgetreten. Stellen Sie sicher, dass das System gemäß EMV-Richtlinien installiert ist."/>
+					<Text TextId="TOK_Help_ErrorType_0x0106" Value="Fehlerfreier Betrieb ist nicht mehr sichergestellt. Für weitere Informationen kontaktieren Sie bitte den Hersteller."/>
+					<Text TextId="TOK_Help_ErrorType_0x0107" Value="Position kann fehlerhaft oder ausserhalb der Spezifikation sein (z.B. Temperatur, Geschwindigkeit ausserhalb der Spezifikation oder anderer interner Fehler)."/>
+					<Text TextId="TOK_Help_ErrorType_0x0200" Value="Der Drehgeber hat zwischen zwei aufeinanderfolgenden Positionsmessungen eine hohe Differenz festgestellt und kann möglicherweise keine korrekten Positionsdaten bereitstellen. Ersetzen Sie den Drehgeber, falls der Fehler fortbesteht."/>
+					<Text TextId="TOK_Help_ErrorType_0x0201" Value="Der gewünschte Preset-Wert liegt außerhalb des parametrierten Gesamtmessbereiches des Gebers. Der Preset kann deshalb nicht ausgeführt werden."/>
+					<Text TextId="TOK_Help_ErrorType_0x0220" Value="Der Parameter-Wert für Schritte pro Umdrehung ist Null. Dies ist nicht zulässig."/>
+					<Text TextId="TOK_Help_ErrorType_0x0221" Value="Der Parameter-Wert für den Gesamtmessbereich ist Null. Dies ist nicht zulässig."/>
+					<Text TextId="TOK_Help_ErrorType_0x0222" Value="Der Parameter-Wert für Schritte pro Umdrehung ist außerhalb des gültigen Wertebereichs für diesen Drehgeber. Bitte beachten Sie den Maximalwert, der im Datenblatt des Drehgebers angegeben ist."/>
+					<Text TextId="TOK_Help_ErrorType_0x0223" Value="Der Parameter-Wert für den Gesamtmessbereich ist außerhalb des gültigen Wertebereichs für diesen Drehgeber. Bitte beachten Sie den Maximalwert, der im Datenblatt des Drehgebers angegeben ist."/>
+					<Text TextId="TOK_Help_ErrorType_0x0224" Value="Der Parameter-Wert für den Gesamtmessbereich ist außerhalb des gültigen Wertebereichs. Er darf das Produkt aus parametrierten Schritten pro Umdrehung und der max. Anzahl an Umdrehungen (Wert 8192 für 13 Bit oder 65536 für 16 Bit, je nach Drehgeber-Typ) nicht übersteigen."/>
+					<Text TextId="TOK_Help_ErrorType_0x0225" Value="Der Parameter-Wert für die Drehrichtung hat einen anderen Wert als 0 oder 1. Dies ist nicht zulässig."/>
+					<Text TextId="TOK_Help_ErrorType_0x0240" Value="Der Parameter-Wert für die Drehzahl-Einheit (Skalierung) liegt außerhalb des gültigen Wertebereichs von 0 bis 3. Dies ist nicht zulässig."/>
+					<Text TextId="TOK_Help_ErrorType_0x0241" Value="Der Parameter-Wert für die Drehzahl-Aktualisierungszeit ist Null oder kleiner als die Buszykluszeit. Dies ist nicht zulässig."/>
+					<Text TextId="TOK_Help_ErrorType_0x0242" Value="Der Parameter-Wert für die Drehzahl-Filtertiefe ist Null. Dies ist nicht zulässig."/>
+					<Text TextId="TOK_Help_ErrorType_0x0260" Value="Der Parameter-Wert für die Aktivierung des Getriebefaktors liegt außerhalb des gültigen Wertebereichs. Dies ist nicht zulässig."/>
+					<Text TextId="TOK_Help_ErrorType_0x0261" Value="Der Parameter-Wert für den Zähler (der Anzahl der Umdrehungen) des Getriebefaktors liegt außerhalb des gültigen Wertebereichs. Dies ist nicht zulässig."/>
+					<Text TextId="TOK_Help_ErrorType_0x0262" Value="Der Parameter-Wert für den Nenner (der Anzahl der Umdrehungen) des Getriebefaktors liegt außerhalb des gültigen Wertebereichs. Dies ist nicht zulässig."/>					
+					<Text TextId="TOK_Help_ErrorType_0x0263" Value="Die Kombination der Parameter-Werte für Zähler und Nenner des Getriebefaktors und des Gesamtmessbereichs (für den Getriebefaktor-Betrieb) überschreitet den 32-Bit-Wertebereich des Positionswerts. Die Parameter müssen angepasst werden."/>					
+					<Text TextId="TOK_Help_ErrorType_0x0300" Value="Ein Fehler trat beim Lesen des elektronischen Typenschildes aus dem internen nicht-flüchtigen Speicher auf. Der Drehgeber arbeitet mit Default-Einstellungen."/>
+					<Text TextId="TOK_Help_ErrorType_0x0320" Value="Die Spannung der Stützbatterie des Drehgebers hat den Warn-Status erreicht. Ersetzen Sie demnächst den Drehgeber, um Multiturn-Positionsfehler zu vermeiden."/>
+
+					<!-- Parameter -->
+					<Text TextId="speedParam" Value="Drehzahl Parameter"/>
+					<Text TextId="gearParam" Value="Getriebe Parameter"/>
+					<Text TextId="gearParam_1_name" Value="Getriebefaktor: Aktivierung"/>
+					<Text TextId="gearParam_2_name" Value="Getriebefaktor: Zähler"/>
+					<Text TextId="gearParam_3_name" Value="Getriebefaktor: Nenner"/>
+					<Text TextId="FirstDataObject" Value="Drehgeber Parameter"/>
+					<Text TextId="DrehName" Value="Drehrichtung"/>
+					<Text TextId="Uhr" Value="Im Uhrzeigersinn (CW)"/>
+					<Text TextId="gegenUhr" Value="Gegen den Uhrzeigersinn (CCW)"/>
+					<Text TextId="AufloesungName" Value="Schritte pro Umdrehung"/>
+					<Text TextId="TMR_Name" Value="Gesamtmessbereich"/>
+					<Text TextId="Class4Name" Value="Drehgeber Klasse"/>
+					<Text TextId="Class3" Value="Klasse 3 (ohne Skalierung, Preset, Drehrichtung)"/>
+					<Text TextId="Class4" Value="Klasse 4"/>
+					<Text TextId="PresetXIST1Name" Value="Preset wirkt auf G1_XIST1"/>
+					<Text TextId="G1_XIST1_affected" Value="Ja"/>
+					<Text TextId="G1_XIST1_not_affected" Value="Nein"/>
+					<Text TextId="ScalingName" Value="Skalierung"/>
+					<Text TextId="Scaling_disabled" Value="Aus"/>
+					<Text TextId="Scaling_enabled" Value="Ein"/>
+					<Text TextId="AlarmName" Value="Alarm Channel Control (nur V3.1)"/>
+					<Text TextId="Communication_Alarms_only" Value="Nur Kommunikations-Alarme"/>
+					<Text TextId="Profile_Specific_Alarms" Value="Auch Profil-spezifische Alarme"/>
+					<Text TextId="MLS_Failures_Name" Value="Max.Master Lifesign Fehler(nur V3.1)"/>
+					<Text TextId="CompatName" Value="Profil-Kompatibilität"/>
+					<Text TextId="Compatibility_Profile_31" Value="Profil V3.1"/>
+					<Text TextId="No_Compatibility" Value="Profil V4.1"/>
+					<Text TextId="SpeedCode_Name" Value="Drehzahl Skalierung"/>
+					<Text TextId="SpeedCycles_Name" Value="Drehzahl Aktualisierungszeit [ms]"/>
+					<Text TextId="SpeedAverage_Name" Value="Drehzahl Filtertiefe (Aktualisierungszeiten)"/>
+					<Text TextId="Speed_1000_Name" Value="Schritte/1000ms"/>
+					<Text TextId="Speed_100_Name" Value="Schritte/100ms"/>
+					<Text TextId="Speed_10_Name" Value="Schritte/10ms"/>
+					<Text TextId="Speed_rpm_Name" Value="Umdrehungen pro Minute (upm)"/>
+					<Text TextId="GearFactor_disabled" Value="Aus"/>
+					<Text TextId="GearFactor_enabled" Value="Ein"/>
+
+					<Text TextId="ENC_STW2_ID" Value="Encoder control word 2 (STW2_ENC)"/>
+					<Text TextId="ENC_ZSW2_ID" Value="Encoder status word 2 (ZSW2_ENC)"/>
+					<Text TextId="G1_ZSW_ID" Value="Sensor 1 status word (G1_ZSW)"/>
+					<Text TextId="G1_STW_ID" Value="Sensor 1 control word (G1_STW)"/>
+					<Text TextId="G1_XIST1_ID" Value="Sensor 1 position actual value 1 (G1_XIST1)"/>
+					<Text TextId="G1_XIST2_ID" Value="Sensor 1 position actual value 2 (G1_XIST2)"/>
+					<Text TextId="NIST_A_ID" Value="Velocity actual value A"/>
+					<Text TextId="NIST_B_ID" Value="Velocity actual value B"/>
+					<Text TextId="G1_XIST_PRESET_A_ID" Value="Sensor preset control word 32bit  (G1_XIST_PRESET_A)"/>
+
+
+					<Text TextId="DataItem_Fault_Acknowledge_ID" Value="Fault Acknowledge"/>
+					<Text TextId="DataItem_ControlByPLC_ID" Value="Control by PLC"/>
+					<Text TextId="DataItem_Controller_SignOfLife_ID" Value="Controller Sign-Of-Life"/>
+
+					<Text TextId="DataItem_Fault_Present_ID" Value="Fault Present"/>
+					<Text TextId="DataItem_ControlByPLC_Reuested_ID" Value="Control requested"/>
+					<Text TextId="DataItem_Encoder_SignOfLife_ID" Value="Encoder Sign-Of-Life"/>
+
+					<Text TextId="DataItem_Home_Position_Mode_ID" Value="Home position mode"/>
+					<Text TextId="DataItem_Request_Set_OR_Shift_Home_Position_ID" Value="Request set/shift of home position"/>
+					<Text TextId="DataItem_Request_Absolute_Value_Cyclically_ID" Value="Request absolute value cyclically"/>
+					<Text TextId="DataItem_Activate_Parking_Sensor_ID" Value="Activate parking sensor"/>
+					<Text TextId="DataItem_Acknowledging_Sensor_Error_ID" Value="Acknowledging a sensor error"/>
+
+					<Text TextId="DataItem_Error_Acknowledgement_Detected_ID" Value="Requirement of error acknowledgement detected"/>
+					<Text TextId="DataItem_Set_OR_Shift_Home_Position_Executed_ID" Value="Set /Shift of home position executed"/>
+					<Text TextId="DataItem_Transmit_Absolute_Value_Cyclically_ID" Value="Transmit absolute value cyclically"/>
+					<Text TextId="DataItem_Parking_Sensor_Activate_ID" Value="Parking sensor active"/>
+					<Text TextId="DataItem_Sensor_Error_Present_ID" Value="Sensor error"/>
+
+					<Text TextId="DataItem_Preset_Value_ID" Value="Sensor preset value"/>
+					<Text TextId="DataItem_Preset_Trigger_ID" Value="Trigger bit to control the transfer of the preset value (0 -&gt; 1 edge)"/>
+
+				</Language>
+			</ExternalTextList>
+		</ApplicationProcess>
+	</ProfileBody>
+</ISO15745Profile>

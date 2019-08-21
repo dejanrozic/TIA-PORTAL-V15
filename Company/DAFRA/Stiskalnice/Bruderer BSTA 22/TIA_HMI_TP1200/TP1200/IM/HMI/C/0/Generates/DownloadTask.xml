@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DownloadTask>
+  <ProjectInfo
+    DeviceVersion="15.0.0.0"
+    CreationTime="2019-07-23 10:42:06 (UTC)"
+    Runtime="COLORADO"
+    RtProjectName="TP1200.HMI_1[TP1200 Comfort]"
+    RtProjectFolderName="TP1200.HMI_1[TP1200 Comfort]"
+    DeviceType="TP1200 Comfort"
+    DisplayOrientation="0"
+    RTReleaseNo="15.0.0.4"
+    ImageReleaseNo="15.0.0.3"
+    RTCV="15.0.0.3"
+    PRCV="15.0.0.3"
+    FirmwareFileName="CP_7_9\15.0.0.4\CP_7_9_12_V15_0.fwf"
+    RuntimeFileName="CP_7_9\15.0.0.4\CP_7_9_12_V15_0.ruf"
+    RuntimeAddonFolderName="CP_7_9" />
+  <FullDownload>pdata.fwc</FullDownload>
+  <FullDownload
+    type="ADMINDATA">pdata.pwx</FullDownload>
+  <FullDownload>ProjectSettings.hsf</FullDownload>
+  <FullDownload>DeviceSettings.hsf</FullDownload>
+</DownloadTask>

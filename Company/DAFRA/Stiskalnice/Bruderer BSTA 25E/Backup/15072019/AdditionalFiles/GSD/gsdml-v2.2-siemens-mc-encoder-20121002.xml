@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\XSD\GSDML-DeviceProfile-v2.2.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x002A" DeviceID="0x801">
+      <InfoText TextId="T_AbsoluteEncoder" />
+      <VendorName Value="Siemens AG" />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="Encoders" ProductFamily="MC-ENCODER" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="DAP1_STD_PDEV_ST" PhysicalSlots="0..1" ModuleIdentNumber="0x20000" MinDeviceInterval="32" ImplementationType="ERTEC200" DNS_CompatibleName="MC-ENCODER-Singleturn-13Bit" ExtendedAddressAssignmentSupported="true" AddressAssignment="DCP;LOCAL" FixedInSlots="0" ObjectUUID_LocalIndex="1" RequiredSchemaVersion="V2.2" ParameterizationSpeedupSupported="false" NameOfStationNotTransferable="false" PowerOnToCommReady="1000">
+          <ModuleInfo>
+            <Name TextId="T_DAP1_Name_ST13_V1x" />
+            <InfoText TextId="T_DAP1_Info_ST13_V1x" />
+            <VendorName Value="Siemens AG" />
+            <OrderNumber Value="6FX2001-5xN13" />
+            <HardwareRelease Value="A1.0" />
+            <SoftwareRelease Value="V1.0" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000" />
+            <SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001" />
+            <SubslotItem SubslotNumber="32770" TextId="TOK_Subslot_8002" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="64" MaxOutputLength="64" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="ID_STD_PDEV_MOD_0013" FixedInSlots="1" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP1_STD_PDEV_ST" SubmoduleIdentNumber="0x00000001">
+              <IOData />
+              <ModuleInfo>
+                <Name TextId="T_DAP1_VSUB_Name" />
+                <InfoText TextId="T_DAP1_VSUB_Info" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Class="Class3" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_2;RT_CLASS_3" TextId="TOK_DAP_InterfaceModule" IsochroneModeSupported="true" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" NetworkComponentDiagnosisSupported="true" DCP_HelloSupported="false">
+              <RT_Class3Properties MaxBridgeDelay="2920" MaxNumberIR_FrameData="400" />
+              <SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="50" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" />
+              <ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+                <TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+                <RT_Class3TimingProperties SendClock="32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128" ReductionRatio="1" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUType="100BASETXFD" TextId="TOK_Port1" MaxPortRxDelay="363" MaxPortTxDelay="1192" PortDeactivationSupported="false" LinkStateDiagnosisCapability="Up+Down" />
+            <PortSubmoduleItem SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUType="100BASETXFD" TextId="TOK_Port2" MaxPortRxDelay="363" MaxPortTxDelay="1192" PortDeactivationSupported="false" LinkStateDiagnosisCapability="Up+Down" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem ID="DAP5_STD_PDEV_MT" PhysicalSlots="0..1" ModuleIdentNumber="0x20010" MinDeviceInterval="32" ImplementationType="ERTEC200" DNS_CompatibleName="MC-ENCODER-Multiturn-27Bit" ExtendedAddressAssignmentSupported="true" AddressAssignment="DCP;LOCAL" FixedInSlots="0" ObjectUUID_LocalIndex="1" RequiredSchemaVersion="V2.2" ParameterizationSpeedupSupported="false" NameOfStationNotTransferable="false" PowerOnToCommReady="1000">
+          <ModuleInfo>
+            <Name TextId="T_DAP5_Name_MT27_V1x" />
+            <InfoText TextId="T_DAP5_Info_MT27_V1x" />
+            <VendorName Value="Siemens AG" />
+            <OrderNumber Value="6FX2001-5xN25" />
+            <HardwareRelease Value="A1.0" />
+            <SoftwareRelease Value="V1.0" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000" />
+            <SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001" />
+            <SubslotItem SubslotNumber="32770" TextId="TOK_Subslot_8002" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="64" MaxOutputLength="64" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="ID_STD_PDEV_MOD_1413" FixedInSlots="1" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP5_STD_PDEV_MT" SubmoduleIdentNumber="0x00000001">
+              <IOData />
+              <ModuleInfo>
+                <Name TextId="T_DAP5_VSUB_Name" />
+                <InfoText TextId="T_DAP5_VSUB_Info" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Class="Class3" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_2;RT_CLASS_3" TextId="TOK_DAP_InterfaceModule" IsochroneModeSupported="true" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" NetworkComponentDiagnosisSupported="true" DCP_HelloSupported="false">
+              <RT_Class3Properties MaxBridgeDelay="2920" MaxNumberIR_FrameData="400" />
+              <SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="50" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP" />
+              <ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="false">
+                <TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+                <RT_Class3TimingProperties SendClock="32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128" ReductionRatio="1" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUType="100BASETXFD" TextId="TOK_Port1" MaxPortRxDelay="363" MaxPortTxDelay="1192" PortDeactivationSupported="false" LinkStateDiagnosisCapability="Up+Down" />
+            <PortSubmoduleItem SubslotNumber="32770" SubmoduleIdentNumber="0x0003" MAUType="100BASETXFD" TextId="TOK_Port2" MaxPortRxDelay="363" MaxPortTxDelay="1192" PortDeactivationSupported="false" LinkStateDiagnosisCapability="Up+Down" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1" />
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ID="ID_STD_PDEV_MOD_0013" ModuleIdentNumber="0x112C0" PhysicalSubslots="2" RequiredSchemaVersion="V2.2">
+          <ModuleInfo>
+            <Name TextId="T_MOD_Name_EO_Singleturn" />
+            <InfoText TextId="T_STD_PDEV_MOD_Info_Singleturn" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_STD_PDEV_MOD_0013_Sub1" SubmoduleIdentNumber="0x0000FFFF" API="15616" FixedInSubslots="1">
+              <IOData />
+              <RecordDataList>
+                <ParameterRecordDataItem Index="4096" Length="7" TransferSequence="0">
+                  <Name TextId="T_EncoderVendorParameters" />
+                  <Const ByteOffset="0" Data="0x00,0x02,0x29,0x00,0x00,0x00,0x00" />
+                  <Ref ValueItemTarget="VelocityFilter" ByteOffset="0" DataType="Unsigned8" DefaultValue="1" TextId="T_VelocityFilter" />
+                  <Ref ByteOffset="3" DataType="Integer32" DefaultValue="3000" AllowedValues="-2147483648..2147483647" Changeable="true" Visible="true" TextId="T_VelocityReference" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="48896" Length="31" TransferSequence="0">
+                  <Name TextId="T_EncoderParameters" />
+                  <Const Data="0x14,0x00,0x00,0x00,0x00,0x00,0x00,0x20,0x00,0x00,0x00,0x00,0x00,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00" />
+                  <Ref ValueItemTarget="CodeSequence" ByteOffset="0" DataType="Bit" BitOffset="0" DefaultValue="0" TextId="T_CodeSequence" />
+                  <Ref ValueItemTarget="DisEnable" ByteOffset="0" DataType="Bit" BitOffset="1" DefaultValue="1" TextId="T_Class4Functionality" />
+                  <Ref ValueItemTarget="Not_DisEnable" ByteOffset="0" DataType="Bit" BitOffset="2" DefaultValue="1" TextId="T_PresetControl" />
+                  <Ref ValueItemTarget="DisEnable" ByteOffset="0" DataType="Bit" BitOffset="3" DefaultValue="0" TextId="T_ScalingFuncControl" />
+                  <Ref ValueItemTarget="DisEnable" ByteOffset="0" DataType="Bit" BitOffset="4" DefaultValue="0" TextId="T_AlarmChannelControl" />
+                  <Ref ValueItemTarget="Not_DisEnable" ByteOffset="0" DataType="Bit" BitOffset="5" DefaultValue="1" TextId="T_CompatibilityMode" />
+                  <Ref ByteOffset="5" DataType="Unsigned32" DefaultValue="8192" AllowedValues="1..8192" Changeable="true" Visible="true" TextId="T_MeasuringUnitsPerRevolution" />
+                  <Ref ByteOffset="13" DataType="Unsigned32" DefaultValue="8192" AllowedValues="2..8192" Changeable="true" Visible="true" TextId="T_TotalMeasuringRange" />
+                  <Ref ByteOffset="17" DataType="Unsigned8" DefaultValue="1" AllowedValues="0..255" Changeable="true" Visible="true" TextId="T_MaxToleratedFailuresOfMaster_Sign_Of_Life" />
+                  <Ref ValueItemTarget="VelocityMeasuringUnit" ByteOffset="18" DataType="Unsigned8" DefaultValue="4" AllowedValues="0..4" TextId="T_VelocityMeasuringUnit" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_MOD_Sub1_MAP_Name" />
+                <InfoText TextId="T_MOD_Sub1_MAP_Info" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <UseableSubmodules>
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_81" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_82" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_83" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_84" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_860" AllowedInSubslots="2" />
+          </UseableSubmodules>
+        </ModuleItem>
+        <ModuleItem ID="ID_STD_PDEV_MOD_1413" ModuleIdentNumber="0x112C0" PhysicalSubslots="2" RequiredSchemaVersion="V2.2">
+          <ModuleInfo>
+            <Name TextId="T_MOD_Name_EO_Multiturn" />
+            <InfoText TextId="T_STD_PDEV_MOD_Info_Multiturn" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="ID_STD_PDEV_MOD_1413_Sub1" SubmoduleIdentNumber="0x0000FFFF" API="15616" FixedInSubslots="1">
+              <IOData />
+              <RecordDataList>
+                <ParameterRecordDataItem Index="4096" Length="7" TransferSequence="0">
+                  <Name TextId="T_EncoderVendorParameters" />
+                  <Const ByteOffset="0" Data="0x00,0x02,0x29,0x00,0x00,0x00,0x00" />
+                  <Ref ValueItemTarget="VelocityFilter" ByteOffset="0" DataType="Unsigned8" DefaultValue="1" TextId="T_VelocityFilter" />
+                  <Ref ByteOffset="3" DataType="Integer32" DefaultValue="3000" AllowedValues="-2147483648..2147483647" Changeable="true" Visible="true" TextId="T_VelocityReference" />
+                </ParameterRecordDataItem>
+                <ParameterRecordDataItem Index="48896" Length="31" TransferSequence="0">
+                  <Name TextId="T_EncoderParameters" />
+                  <Const Data="0x14,0x00,0x00,0x00,0x00,0x00,0x00,0x20,0x00,0x00,0x00,0x00,0x00,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00" />
+                  <Ref ValueItemTarget="CodeSequence" ByteOffset="0" DataType="Bit" BitOffset="0" DefaultValue="0" TextId="T_CodeSequence" />
+                  <Ref ValueItemTarget="DisEnable" ByteOffset="0" DataType="Bit" BitOffset="1" DefaultValue="1" TextId="T_Class4Functionality" />
+                  <Ref ValueItemTarget="Not_DisEnable" ByteOffset="0" DataType="Bit" BitOffset="2" DefaultValue="1" TextId="T_PresetControl" />
+                  <Ref ValueItemTarget="DisEnable" ByteOffset="0" DataType="Bit" BitOffset="3" DefaultValue="0" TextId="T_ScalingFuncControl" />
+                  <Ref ValueItemTarget="DisEnable" ByteOffset="0" DataType="Bit" BitOffset="4" DefaultValue="0" TextId="T_AlarmChannelControl" />
+                  <Ref ValueItemTarget="Not_DisEnable" ByteOffset="0" DataType="Bit" BitOffset="5" DefaultValue="1" TextId="T_CompatibilityMode" />
+                  <Ref ByteOffset="5" DataType="Unsigned32" DefaultValue="8192" AllowedValues="1..8192" Changeable="true" Visible="true" TextId="T_MeasuringUnitsPerRevolution" />
+                  <Ref ByteOffset="13" DataType="Unsigned32" DefaultValue="134217728" AllowedValues="2..134217728" Changeable="true" Visible="true" TextId="T_TotalMeasuringRange" />
+                  <Ref ByteOffset="17" DataType="Unsigned8" DefaultValue="1" AllowedValues="0..255" Changeable="true" Visible="true" TextId="T_MaxToleratedFailuresOfMaster_Sign_Of_Life" />
+                  <Ref ValueItemTarget="VelocityMeasuringUnit" ByteOffset="18" DataType="Unsigned8" DefaultValue="4" AllowedValues="0..4" TextId="T_VelocityMeasuringUnit" />
+                </ParameterRecordDataItem>
+              </RecordDataList>
+              <ModuleInfo>
+                <Name TextId="T_MOD_Sub1_MAP_Name" />
+                <InfoText TextId="T_MOD_Sub1_MAP_Info" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <UseableSubmodules>
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_81" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_82" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_83" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_84" AllowedInSubslots="2" />
+            <SubmoduleItemRef SubmoduleItemTarget="ID_Mod_860" AllowedInSubslots="2" />
+          </UseableSubmodules>
+        </ModuleItem>
+      </ModuleList>
+      <SubmoduleList>
+        <SubmoduleItem ID="ID_Mod_81" SubmoduleIdentNumber="0x51" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Std_Telegram_81_Input" Length="12" UseAsBits="true" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Std_Telegram_Output" Length="4" UseAsBits="true" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_81" />
+            <InfoText TextId="TOK_InfoTextId_Module_81" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="3" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_82" SubmoduleIdentNumber="0x52" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Std_Telegram_82_Input" Length="14" UseAsBits="true" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Std_Telegram_Output" Length="4" UseAsBits="true" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_82" />
+            <InfoText TextId="TOK_InfoTextId_Module_82" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="4" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_83" SubmoduleIdentNumber="0x53" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Std_Telegram_83_Input" Length="16" UseAsBits="true" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Std_Telegram_Output" Length="4" UseAsBits="true" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_83" />
+            <InfoText TextId="TOK_InfoTextId_Module_83" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="4" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_84" SubmoduleIdentNumber="0x54" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Std_Telegram_84_Input" Length="20" UseAsBits="true" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Std_Telegram_Output" Length="4" UseAsBits="true" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_84" />
+            <InfoText TextId="TOK_InfoTextId_Module_84" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="4" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+        <SubmoduleItem ID="ID_Mod_860" SubmoduleIdentNumber="0x35C" API="15616">
+          <IOData IOPS_Length="1" IOCS_Length="1">
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Man_Telegram_860_Input" Length="8" UseAsBits="true" />
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="TOK_Man_Telegram_860_Output" Length="4" UseAsBits="true" />
+            </Output>
+          </IOData>
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_860" />
+            <InfoText TextId="TOK_InfoTextId_Module_860" />
+          </ModuleInfo>
+          <IsochroneMode IsochroneModeRequired="false" T_DC_Base="8" T_DC_Min="4" T_DC_Max="16" T_IO_Base="125000" T_IO_InputMin="4" T_IO_OutputMin="1" />
+        </SubmoduleItem>
+      </SubmoduleList>
+      <ValueList>
+        <ValueItem ID="DisEnable">
+          <Assignments>
+            <Assign TextId="T_disable" Content="0" />
+            <Assign TextId="T_enable" Content="1" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="Not_DisEnable">
+          <Assignments>
+            <Assign TextId="T_disable" Content="1" />
+            <Assign TextId="T_enable" Content="0" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="CodeSequence">
+          <Assignments>
+            <Assign TextId="T_CodeSequence_CW" Content="0" />
+            <Assign TextId="T_CodeSequence_CCW" Content="1" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="VelocityMeasuringUnit">
+          <Assignments>
+            <Assign Content="0" TextId="T_StepsPerSec" />
+            <Assign Content="1" TextId="T_StepsPer100ms" />
+            <Assign Content="2" TextId="T_StepsPer10ms" />
+            <Assign Content="3" TextId="T_RevolutionsPerMinute" />
+            <Assign Content="4" TextId="T_N2N4" />
+          </Assignments>
+        </ValueItem>
+        <ValueItem ID="VelocityFilter">
+          <Assignments>
+            <Assign Content="0" TextId="T_VelocityAccuracyFine" />
+            <Assign Content="1" TextId="T_VelocityAccuracyNormal" />
+            <Assign Content="2" TextId="T_VelocityAccuracyCoarse" />
+          </Assignments>
+        </ValueItem>
+      </ValueList>
+      <GraphicsList>
+        <GraphicItem ID="1" GraphicFile="GSDML-002A-0801-MC" />
+      </GraphicsList>
+      <CategoryList>
+        <CategoryItem ID="CatRef_SingleTurn" TextId="T_SingleTurn" />
+        <CategoryItem ID="CatRef_MultiTurn" TextId="T_MultiTurn" />
+      </CategoryList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <Text TextId="T_AbsoluteEncoder" Value="Decentralized standalone absolute encoder with protection class IP67" />
+          <Text TextId="T_SingleTurn" Value="Singleturn" />
+          <Text TextId="T_MultiTurn" Value="Multiturn" />
+          <Text TextId="TOK_Subslot_8000" Value="X1" />
+          <Text TextId="TOK_Subslot_8001" Value="X1 P1" />
+          <Text TextId="TOK_Subslot_8002" Value="X1 P2" />
+          <Text TextId="TOK_DAP_InterfaceModule" Value="PN-IO" />
+          <Text TextId="TOK_Port1" Value="Port 1" />
+          <Text TextId="TOK_Port2" Value="Port 2" />
+          <Text TextId="T_DAP1_Name_ST13_V1x" Value="Singleturn 13 Bit V1.x" />
+          <Text TextId="T_DAP5_Name_MT27_V1x" Value="Multiturn 27 Bit V1.x" />
+          <Text TextId="T_DAP1_Info_ST13_V1x" Value="IO Device MC-ENCODER (13Bit Absolute) with PROFINET-IO-functionality (RT, IRT, cyclic and acyclic communication , Clock synchronization). Resolution 13 bits steps per revolution" />
+          <Text TextId="T_DAP5_Info_MT27_V1x" Value="IO Device MC-ENCODER (27Bit Absolute) with PROFINET-IO-functionality (RT, IRT, cyclic and acyclic communication , Clock synchronization). Resolution 13 bits steps per revolution plus 14Bit for Revolution counter" />
+          <Text TextId="T_DAP1_VSUB_Name" Value="" />
+          <Text TextId="T_DAP1_VSUB_Info" Value="" />
+          <Text TextId="T_DAP5_VSUB_Name" Value="" />
+          <Text TextId="T_DAP5_VSUB_Info" Value="" />
+          <Text TextId="T_MOD_Name_EO_Singleturn" Value="EO Encoder Singleturn" />
+          <Text TextId="T_MOD_Name_EO_Multiturn" Value="EO Encoder Multiturn" />
+          <Text TextId="T_STD_PDEV_MOD_Info_Singleturn" Value="Encoder Object (EO) Absolute Encoder Singleturn" />
+          <Text TextId="T_STD_PDEV_MOD_Info_Multiturn" Value="Encoder Object (EO) Absolute Encoder Multiturn" />
+          <Text TextId="T_MOD_Sub1_MAP_Name" Value="Module Access Point" />
+          <Text TextId="T_MOD_Sub1_MAP_Info" Value="Access Point to Encoder Object (EO)." />
+          <Text TextId="TOK_TextId_Module_81" Value="Standard Telegram 81, PZD2/6" />
+          <Text TextId="TOK_TextId_Module_82" Value="Standard Telegram 82, PZD2/7" />
+          <Text TextId="TOK_TextId_Module_83" Value="Standard Telegram 83, PZD2/8" />
+          <Text TextId="TOK_TextId_Module_84" Value="Standard Telegram 84, PZD2/10" />
+          <Text TextId="TOK_TextId_Module_860" Value="SIEMENS Telegram 860, PZD2/4" />
+          <Text TextId="TOK_InfoTextId_Module_81" Value="Standard Telegram 81 for Encoder: 1 Position value, PZD-length 2/6 words." />
+          <Text TextId="TOK_InfoTextId_Module_82" Value="Standard Telegram 82 for Encoder: 1 Position value, Velocity 16 bit, PZD-length 2/7 words." />
+          <Text TextId="TOK_InfoTextId_Module_83" Value="Standard Telegram 83 for Encoder: 1 Position value, Velocity 32 bit, PZD-length 2/8 words." />
+          <Text TextId="TOK_InfoTextId_Module_84" Value="Standard Telegram 84 for Encoder: 1 Position value, Velocity 32 bit, PZD-length 2/10 words." />
+          <Text TextId="TOK_InfoTextId_Module_860" Value="SIEMENS Telegram 860 for Encoder: 1 Position value, Velocity 32 bit, PZD-length 2/4 words." />
+          <Text TextId="TOK_Std_Telegram_Output" Value="Standard Telegram Output" />
+          <Text TextId="TOK_Std_Telegram_81_Input" Value="Standard Telegram 81 Input" />
+          <Text TextId="TOK_Std_Telegram_82_Input" Value="Standard Telegram 82 Input" />
+          <Text TextId="TOK_Std_Telegram_83_Input" Value="Standard Telegram 83 Input" />
+          <Text TextId="TOK_Std_Telegram_84_Input" Value="Standard Telegram 84 Input" />
+          <Text TextId="TOK_Man_Telegram_860_Input" Value="SIEMENS Telegram 860 Input" />
+          <Text TextId="TOK_Man_Telegram_860_Output" Value="SIEMENS Telegram 860 Output" />
+          <Text TextId="T_EncoderVendorParameters" Value="Rotation Velocity actual value" />
+          <Text TextId="T_EncoderParameters" Value="Standard parameter (Encoder Profile)" />
+          <Text TextId="T_EncoderSpecificParameters" Value="Standard parameter (Encoder Profile)" />
+          <Text TextId="T_CodeSequence" Value="Code sequence" />
+          <Text TextId="T_Class4Functionality" Value="Encoder Class 4 functionality" />
+          <Text TextId="T_PresetControl" Value="Preset affects XIST1" />
+          <Text TextId="T_ScalingFuncControl" Value="Scaling function control" />
+          <Text TextId="T_AlarmChannelControl" Value="Alarm channel control" />
+          <Text TextId="T_CompatibilityMode" Value="Compatibility Mode V3.1" />
+          <Text TextId="T_MeasuringUnitsPerRevolution" Value="Scaling: Measuring units per Revolution" />
+          <Text TextId="T_TotalMeasuringRange" Value="Scaling: Total measuring range" />
+          <Text TextId="T_MaxToleratedFailuresOfMaster_Sign_Of_Life" Value="Tolerated sign of life faults" />
+          <Text TextId="T_VelocityMeasuringUnit" Value="Velocity measuring unit" />
+          <Text TextId="T_ZSW2_ENC" Value="ZSW2 ENC (Position value) " />
+          <Text TextId="T_G1_ZSW1" Value="G1_ZSW1" />
+          <Text TextId="T_G1_IST1" Value="G1_IST1" />
+          <Text TextId="T_G1_IST2" Value="G1_IST2" />
+          <Text TextId="T_G1_IST3" Value="G1_IST3" />
+          <Text TextId="T_NIST_A" Value="NIST_A" />
+          <Text TextId="T_NIST_B" Value="NIST_B" />
+          <Text TextId="T_STW2_ENC" Value="STW2_ENC" />
+          <Text TextId="T_G1_STW1" Value="G1_STW1" />
+          <Text TextId="T_PositionValue" Value="Position value" />
+          <Text TextId="T_VelocityValue" Value="Velocity value" />
+          <Text TextId="T_ParameterAssignmentError" Value="Parameter assignment error" />
+          <Text TextId="T_StepsPerSec" Value="Steps/s" />
+          <Text TextId="T_StepsPer100ms" Value="Steps/100ms" />
+          <Text TextId="T_StepsPer10ms" Value="Steps/10ms" />
+          <Text TextId="T_RevolutionsPerMinute" Value="RPM" />
+          <Text TextId="T_N2N4" Value="N2/N4" />
+          <Text TextId="T_disable" Value="disable" />
+          <Text TextId="T_enable" Value="enable" />
+          <Text TextId="T_CodeSequence_CW" Value="CW" />
+          <Text TextId="T_CodeSequence_CCW" Value="CCW" />
+          <Text TextId="T_PresetValue" Value="Preset value" />
+          <Text TextId="T_VelocityReference" Value="Velocity reference N2/N4 (R/min)" />
+          <Text TextId="T_VelocityFilter" Value="Velocity filter" />
+          <Text TextId="T_VelocityAccuracyFine" Value="Fine" />
+          <Text TextId="T_VelocityAccuracyNormal" Value="Normal" />
+          <Text TextId="T_VelocityAccuracyCoarse" Value="Coarse" />
+        </PrimaryLanguage>
+        <Language xml:lang="de">
+          <Text TextId="T_AbsoluteEncoder" Value="Dezentralisierter eigenständiger Absolutdrehgeber mit der Schutzklasse IP67. " />
+          <Text TextId="T_SingleTurn" Value="Singleturn" />
+          <Text TextId="T_MultiTurn" Value="Multiturn" />
+          <Text TextId="TOK_Subslot_8000" Value="X1" />
+          <Text TextId="TOK_Subslot_8001" Value="X1 P1" />
+          <Text TextId="TOK_Subslot_8002" Value="X1 P2" />
+          <Text TextId="TOK_DAP_InterfaceModule" Value="PN-IO" />
+          <Text TextId="TOK_Port1" Value="Port 1" />
+          <Text TextId="TOK_Port2" Value="Port 2" />
+          <Text TextId="T_DAP1_Name_ST13_V1x" Value="Singleturn 13 Bit V1.x" />
+          <Text TextId="T_DAP5_Name_MT27_V1x" Value="Multiturn 27 Bit V1.x" />
+          <Text TextId="T_DAP1_Info_ST13_V1x" Value="IO Device MC-ENCODER (13Bit Absolut) mit PROFINET-IO-Schnittstelle (RT-,IRT- und azyklische Kommunikation , Taktsynchronisation). Auflösung 13Bit pro Umdrehung." />
+          <Text TextId="T_DAP5_Info_MT27_V1x" Value="IO Device MC-ENCODER (27Bit Absolut) mit PROFINET-IO-Schnittstelle (RT-,IRT- und azyklische Kommunikation , Taktsynchronisation). Auflösung 13Bit pro Umdrehung plus 14 Bit für Umdrehungszähler." />
+          <Text TextId="T_DAP1_VSUB_Name" Value="" />
+          <Text TextId="T_DAP1_VSUB_Info" Value="" />
+          <Text TextId="T_DAP5_VSUB_Name" Value="" />
+          <Text TextId="T_DAP5_VSUB_Info" Value="" />
+          <Text TextId="T_MOD_Name_EO_Singleturn" Value="EO Geber Singleturn" />
+          <Text TextId="T_MOD_Name_EO_Multiturn" Value="EO Geber Multiturn" />
+          <Text TextId="T_STD_PDEV_MOD_Info_Singleturn" Value="Encoderobjekt (EO) Absolutgeber Singleturn" />
+          <Text TextId="T_STD_PDEV_MOD_Info_Multiturn" Value="Encoderobjekt (EO) Absolutgeber Multiturn" />
+          <Text TextId="T_MOD_Sub1_MAP_Name" Value="Module Access Point" />
+          <Text TextId="T_MOD_Sub1_MAP_Info" Value="Zugangspunkt auf die Parameter des Geberobjektes (EO)" />
+          <Text TextId="TOK_TextId_Module_81" Value="Standard Telegramm 81, PZD2/6" />
+          <Text TextId="TOK_TextId_Module_82" Value="Standard Telegramm 82, PZD2/7" />
+          <Text TextId="TOK_TextId_Module_83" Value="Standard Telegramm 83, PZD2/8" />
+          <Text TextId="TOK_TextId_Module_84" Value="Standard Telegramm 84, PZD2/10" />
+          <Text TextId="TOK_TextId_Module_860" Value="SIEMENS Telegramm 860, PZD2/4" />
+          <Text TextId="TOK_InfoTextId_Module_81" Value="Standard Telegramm 81 für Geber: 1 Lagegeber, PZD-Länge 2/6. Worte" />
+          <Text TextId="TOK_InfoTextId_Module_82" Value="Standard Telegramm 82 für Geber: 1 Lagegeber, Drehzahlistwert 16Bit, PZD-Länge 2/7 Worte." />
+          <Text TextId="TOK_InfoTextId_Module_83" Value="Standard Telegramm 83 für Geber: 1 Lagegeber, Drehzahlistwert 32Bit, PZD-Länge 2/8 Worte." />
+          <Text TextId="TOK_InfoTextId_Module_84" Value="Standard Telegramm 84 für Geber: 1 Lagegeber, Drehzahlistwert 32Bit, PZD-Länge 2/10 Worte." />
+          <Text TextId="TOK_InfoTextId_Module_860" Value="SIEMENS Telegramm 860 für Geber: Lage-Presetwert 32-Bit, Lageistwert 32-Bit, Drehzahlistwert 32-Bit, PZD-Länge 2/4 Worte." />
+          <Text TextId="TOK_Std_Telegram_Output" Value="Standard Telegramm Output" />
+          <Text TextId="TOK_Std_Telegram_81_Input" Value="Standard Telegramm 81 Input" />
+          <Text TextId="TOK_Std_Telegram_82_Input" Value="Standard Telegramm 82 Input" />
+          <Text TextId="TOK_Std_Telegram_83_Input" Value="Standard Telegramm 83 Input" />
+          <Text TextId="TOK_Std_Telegram_84_Input" Value="Standard Telegramm 84 Input" />
+          <Text TextId="TOK_Man_Telegram_860_Input" Value="SIEMENS Telegramm 860 Input" />
+          <Text TextId="TOK_Man_Telegram_860_Output" Value="SIEMENS Telegramm 860 Output" />
+          <Text TextId="T_EncoderVendorParameters" Value="Drehzahlistwert" />
+          <Text TextId="T_EncoderParameters" Value="Standardparameter (Encoder Profile)" />
+          <Text TextId="T_EncoderSpecificParameters" Value="Standardparameter (Encoder Profile)" />
+          <Text TextId="T_CodeSequence" Value="Drehrichtung" />
+          <Text TextId="T_Class4Functionality" Value="Encoder Class 4 Funktionalität" />
+          <Text TextId="T_PresetControl" Value="Preset beeinflusst XIST1" />
+          <Text TextId="T_ScalingFuncControl" Value="Skalierungsfunktion" />
+          <Text TextId="T_AlarmChannelControl" Value="Diagnose über Alarmkanal" />
+          <Text TextId="T_CompatibilityMode" Value="Kompatibilitätsmodus V3.1" />
+          <Text TextId="T_MeasuringUnitsPerRevolution" Value="Skalierung: Auflösung pro Umdrehung" />
+          <Text TextId="T_TotalMeasuringRange" Value="Skalierung: Gesamtauflösung" />
+          <Text TextId="T_MaxToleratedFailuresOfMaster_Sign_Of_Life" Value="Tolerierte Lebenszeichenfehler" />
+          <Text TextId="T_VelocityMeasuringUnit" Value="Drehzahlnormierung" />
+          <Text TextId="T_ZSW2_ENC" Value="ZSW2_ENC" />
+          <Text TextId="T_G1_ZSW1" Value="G1_ZSW1" />
+          <Text TextId="T_G1_IST1" Value="G1_IST1" />
+          <Text TextId="T_G1_IST2" Value="G1_IST2" />
+          <Text TextId="T_G1_IST3" Value="G1_IST3" />
+          <Text TextId="T_NIST_A" Value="NIST_A" />
+          <Text TextId="T_NIST_B" Value="NIST_B" />
+          <Text TextId="T_STW2_ENC" Value="STW2_ENC" />
+          <Text TextId="T_G1_STW1" Value="G1_STW1" />
+          <Text TextId="T_PositionValue" Value="Position" />
+          <Text TextId="T_VelocityValue" Value="Geschwindigkeit" />
+          <Text TextId="T_ParameterAssignmentError" Value="Parametrierfehler" />
+          <Text TextId="T_StepsPerSec" Value="Schritte/s" />
+          <Text TextId="T_StepsPer100ms" Value="Schritte/100ms" />
+          <Text TextId="T_StepsPer10ms" Value="Schritte/10ms" />
+          <Text TextId="T_RevolutionsPerMinute" Value="RPM" />
+          <Text TextId="T_N2N4" Value="N2/N4" />
+          <Text TextId="T_disable" Value="sperren" />
+          <Text TextId="T_enable" Value="freigeben" />
+          <Text TextId="T_CodeSequence_CW" Value="Steigend im Uhrzeigersinn" />
+          <Text TextId="T_CodeSequence_CCW" Value="Fallend im Uhrzeigersinn" />
+          <Text TextId="T_PresetValue" Value="Presetwert" />
+          <Text TextId="T_VelocityFilter" Value="Drehzahlfilterung" />
+          <Text TextId="T_VelocityReference" Value="Bezugsdrehzahl N2/N4 (U/min)" />
+          <Text TextId="T_VelocityAccuracyFine" Value="Fein" />
+          <Text TextId="T_VelocityAccuracyNormal" Value="Normal" />
+          <Text TextId="T_VelocityAccuracyCoarse" Value="Grob" />
+        </Language>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>
